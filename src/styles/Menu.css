@@ -1,0 +1,12 @@
+.menu-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  position: fixed;
+  margin-top: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-tertiary);
+}

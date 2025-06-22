@@ -1,0 +1,108 @@
+:root {
+  /* Light theme (default) */
+  --bg-primary: #ffffff;
+  --placeholder: #676767;
+  --primary: #E68600;
+  --shadow-25: #00000025;
+  --text-primary: #000000;
+  --text-secondary: #E68600;
+  --text-tertiary: #ffffff;
+  --transparent-primary: #E6860020;
+  --transparent-secondary: #E6860020;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg-primary: #222222;
+  --placeholder: #DBDBDB;
+  --primary: #E68600;
+  --shadow-25: #00000025;
+  --text-primary: #ffffff;
+  --text-secondary: #E68600;
+  --text-tertiary: #ffffff;
+  --transparent-primary: #ffffff20;
+  --transparent-secondary: #ffffff20;
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  /* Background with noise effect */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Background with animated noise effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  background-image: url('./assets/images/noise.png');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.30;
+  pointer-events: none;
+  z-index: -1;
+  animation: noiseMove 1s infinite;
+}
+
+/* Animation of noise movement */
+@keyframes noiseMove {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+
+  20% {
+    transform: translate(-15%, 5%);
+  }
+
+  30% {
+    transform: translate(7%, -25%);
+  }
+
+  40% {
+    transform: translate(-5%, 25%);
+  }
+
+  50% {
+    transform: translate(-15%, 10%);
+  }
+
+  60% {
+    transform: translate(15%);
+  }
+
+  70% {
+    transform: translateY(15%);
+  }
+
+  80% {
+    transform: translate(3%, 35%);
+  }
+
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
