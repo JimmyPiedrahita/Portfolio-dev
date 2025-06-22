@@ -1,5 +1,56 @@
 .main-container {
+    border: 1px solid red;
     width: 800px;
-    height: 100vh;
+    height: auto;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-top: 100px;
 }
+
+.hero-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-section-content .greeting {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--transparent-primary);
+    border-radius: 10px;
+    border: 2px solid var(--transparent-primary);
+    backdrop-filter: blur(10px);
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section-content .greeting p {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.hero-section-content h1 {
+    font-size: 80px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.hero-section-content h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-primary);
+    letter-spacing: 3.5px;
+}
+
