@@ -19,17 +19,21 @@ function App() {
           </div>
           <img src={heroImage} alt="hero" />
         </section>
-        <section id="about" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <h2>About</h2>
-        </section>
-        <section id="skills" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <h2>Skills</h2>
-        </section>
-        <section id="projects" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <h2>Projects</h2>
-        </section>
-        <section id="contact" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <h2>Contact</h2>
+        <section id='about' className="about-section" >
+          <h1 className="about-section-title">{t('about')}</h1>
+          <p className="about-section-description">
+            <span className="highlight-description">{t('aboutDescription.part1')}</span>
+            <span>{t('aboutDescription.part2')}</span>
+            <span className="highlight-description">{t('aboutDescription.part3')}</span>
+            <span>{t('aboutDescription.part4')}</span>
+            <span className="highlight-description">{t('aboutDescription.part5')}</span>
+            <span>{t('aboutDescription.part6')}</span>
+            <span className="highlight-description">{t('aboutDescription.part7')}</span>
+            <span>{t('aboutDescription.part8')}</span>
+            <span className="highlight-description">{t('aboutDescription.part9')}</span>
+            <span>{t('aboutDescription.part10')}</span>
+          </p>
+          <button className="about-section-button">{t('download')}</button>
         </section>
       </div>
     </>

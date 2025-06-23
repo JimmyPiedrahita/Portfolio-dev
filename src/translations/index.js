@@ -32,7 +32,21 @@ export const translations = {
       enterMessage: 'Ingresa tu mensaje',
 
       // Hero
-      hello: 'Hola, soy'
+      hello: 'Hola, soy',
+
+      // About
+      aboutDescription: {
+        part1: 'Me gusta aprender haciendo',
+        part2: ', suelo meterme en retos que me obligan a salir de lo básico.',
+        part3: ' Soy ordenado',
+        part4: ' con el código que programo y tambien en la vida, siempre',
+        part5: ' planeo los desarrollos lo suficiente',
+        part6: ', para que me represente de la mejor manera. Además de programar',
+        part7: ' tengo formación en metodologías ágiles',
+        part8: ', tengo habilidades fuertes en ',
+        part9: 'liderazgo y comunicación.',
+        part10: ' Estoy en constante crecimiento personal y tecnico, me gusta que se valore las ideas frescas.'
+      }
     },
     en: {
         // Navigation
@@ -66,14 +80,34 @@ export const translations = {
         enterMessage: 'Enter your message',
 
         // Hero
-        hello: 'Hello, I\'m'
+        hello: 'Hello, I\'m',
+
+        // About
+        aboutDescription: {
+          part1: 'I like to learn by doing',
+          part2: ', I tend to get involved in challenges that force me to go beyond the basics.',
+          part3: ' I am orderly',
+          part4: ' with the code I program and also in life, always',
+          part5: ' plan the developments sufficiently',
+          part6: ', so that I represent the best way. In addition to programming',
+          part7: ' I have training in agile methodologies',
+          part8: ', I have strong',
+          part9: ' leadership and communication skills.',
+          part10: ' I am constantly growing personally and technically, I like to value fresh ideas.'
+        }
       }
   }
   
   // Función helper para obtener traducciones
   export const t = (key, language = 'es', params = {}) => {
-    const translation = translations[language]?.[key] || key
-    
+    // Soporte para claves anidadas usando notación de puntos
+    const keys = key.split('.')
+    let translation = translations[language]
+    for (const k of keys) {
+      translation = translation?.[k]
+      if (translation === undefined) return key
+    }
+    if (typeof translation !== 'string') return key
     // Reemplazar parámetros en la traducción
     return translation.replace(/\{(\w+)\}/g, (match, param) => {
       return params[param] || match
