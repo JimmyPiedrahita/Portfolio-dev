@@ -1,0 +1,39 @@
+.card-skill {
+    width: 160px;
+    height: 164px;
+    background-color: var(--transparent-primary);
+    border: 1px solid var(--transparent-secondary);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: clip-path 0.25s cubic-bezier(.25,1.7,.45,.87), transform 0.25s cubic-bezier(.25,1.7,.45,.87);
+    transform: scale(1);
+    z-index: 1;
+}
+
+.card-skill-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-skill-content h4 {
+    font-size: 15px;
+    font-weight: 500;   
+    color: var(--text-primary);
+}
+
+.card-skill-content img {
+    width: 92px;
+    height: 92px;
+}
+
+.card-skill--hovered {
+    transform: scale(1.08);
+    z-index: 2;
+}
