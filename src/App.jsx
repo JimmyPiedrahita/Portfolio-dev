@@ -19,6 +19,36 @@ function App() {
           </div>
           <img src={heroImage} alt="hero" />
         </section>
+        <section className="hero-section">
+          <div className="hero-section-content">
+            <div className="greeting">
+              <p>{t('hello')}</p>
+            </div>
+            <h1>Jimmy Piedrahita</h1>
+            <h3>SOFTWARE DEVELOPER |</h3>
+          </div>
+          <img src={heroImage} alt="hero" />
+        </section>
+        <section className="hero-section">
+          <div className="hero-section-content">
+            <div className="greeting">
+              <p>{t('hello')}</p>
+            </div>
+            <h1>Jimmy Piedrahita</h1>
+            <h3>SOFTWARE DEVELOPER |</h3>
+          </div>
+          <img src={heroImage} alt="hero" />
+        </section>
+        <section className="hero-section">
+          <div className="hero-section-content">
+            <div className="greeting">
+              <p>{t('hello')}</p>
+            </div>
+            <h1>Jimmy Piedrahita</h1>
+            <h3>SOFTWARE DEVELOPER |</h3>
+          </div>
+          <img src={heroImage} alt="hero" />
+        </section>
       </div>
     </>
   )

@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@theme-toggles/react':
+        specifier: ^4.1.0
+        version: 4.1.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -463,6 +466,12 @@ packages:
     resolution: {integrity: sha512-Q2Mgwt+D8hd5FIPUuPDsvPR7Bguza6yTkJxspDGkZj7tBRn2y4KSWYuIXpftFSjBra76TbKerCV7rgFPQrn+wQ==}
     cpu: [x64]
     os: [win32]
+
+  '@theme-toggles/react@4.1.0':
+    resolution: {integrity: sha512-h3SuJMsej8DfelHt5fjNIlaMfJOK52Vku4pPDVoHaTwjAcoTr4fn8hzeur2oiqWBYFYfKugvv1RdQaBFXaiPKg==}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -1284,6 +1293,11 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.44.0':
     optional: true
+
+  '@theme-toggles/react@4.1.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@types/babel__core@7.20.5':
     dependencies:

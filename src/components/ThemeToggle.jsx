@@ -1,17 +1,14 @@
 import React from 'react'
 import { useTheme } from '../hooks/useTheme'
 import '../styles/ThemeToggle.css'
-import { FaSun, FaMoon } from 'react-icons/fa'
+import "@theme-toggles/react/css/InnerMoon.css"
+import { InnerMoon } from "@theme-toggles/react"
 
 const ThemeToggle = () => {
   const { isDarkMode, toggleTheme } = useTheme()
 
   return (
-    <button onClick={toggleTheme}>
-      {isDarkMode
-        ? <FaSun size={28} className="icon-theme" />
-        : <FaMoon size={28} className="icon-theme" />}
-    </button>
+    <InnerMoon duration={750} toggled={!isDarkMode} toggle={toggleTheme} />
   )
 }
 

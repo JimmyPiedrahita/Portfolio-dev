@@ -7,7 +7,7 @@ const LanguageToggle = () => {
   return (
     <button
       onClick={toggleLanguage} className="language-toggle">
-      {isSpanish ? '🇺🇸' : '🇪🇸'}
+      {isSpanish ? 'EN' : 'ES'}
     </button>
   )
 }
