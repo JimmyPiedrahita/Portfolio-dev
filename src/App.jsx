@@ -2,11 +2,13 @@ import './App.css'
 import Menu from './components/Menu'
 import heroImage from './assets/images/hero.png'
 import { useTranslation } from './translations'
+import CursorJellyBlob from './components/CursorJellyBlob'
 
 function App() {
   const { t } = useTranslation()
   return (
     <>
+      <CursorJellyBlob />
       <Menu />
       <div className="main-container">
         <section id="home" className="hero-section">

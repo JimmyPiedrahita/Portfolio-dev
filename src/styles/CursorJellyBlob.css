@@ -1,0 +1,38 @@
+.jelly-blob {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: background 0.3s;
+}
+
+.jelly-blob-0 {
+  width: 48px;
+  height: 48px;
+  background: #E68600;
+  opacity: 0.7;
+}
+
+.jelly-blob-1 {
+  width: 42px;
+  height: 42px;
+  background: #FFD580;
+  opacity: 0.57;
+}
+
+.jelly-blob-2 {
+  width: 36px;
+  height: 36px;
+  background: #FFB347;
+  opacity: 0.44;
+}
+
+.jelly-blob-3 {
+  width: 30px;
+  height: 30px;
+  background: #FF8000;
+  opacity: 0.31;
+} 
