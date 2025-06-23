@@ -9,7 +9,7 @@ function App() {
     <>
       <Menu />
       <div className="main-container">
-        <section className="hero-section">
+        <section id="home" className="hero-section">
           <div className="hero-section-content">
             <div className="greeting">
               <p>{t('hello')}</p>
@@ -19,35 +19,17 @@ function App() {
           </div>
           <img src={heroImage} alt="hero" />
         </section>
-        <section className="hero-section">
-          <div className="hero-section-content">
-            <div className="greeting">
-              <p>{t('hello')}</p>
-            </div>
-            <h1>Jimmy Piedrahita</h1>
-            <h3>SOFTWARE DEVELOPER |</h3>
-          </div>
-          <img src={heroImage} alt="hero" />
+        <section id="about" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <h2>About</h2>
         </section>
-        <section className="hero-section">
-          <div className="hero-section-content">
-            <div className="greeting">
-              <p>{t('hello')}</p>
-            </div>
-            <h1>Jimmy Piedrahita</h1>
-            <h3>SOFTWARE DEVELOPER |</h3>
-          </div>
-          <img src={heroImage} alt="hero" />
+        <section id="skills" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <h2>Skills</h2>
         </section>
-        <section className="hero-section">
-          <div className="hero-section-content">
-            <div className="greeting">
-              <p>{t('hello')}</p>
-            </div>
-            <h1>Jimmy Piedrahita</h1>
-            <h3>SOFTWARE DEVELOPER |</h3>
-          </div>
-          <img src={heroImage} alt="hero" />
+        <section id="projects" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <h2>Projects</h2>
+        </section>
+        <section id="contact" style={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <h2>Contact</h2>
         </section>
       </div>
     </>
