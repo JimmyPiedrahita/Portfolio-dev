@@ -2,14 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import '../styles/CursorJellyBlob.css';
 
-// Puedes ajustar estos colores para el efecto jelly
-const colors = [
-  '#E68600', // principal
-  '#FFD580', // secundario
-  '#FFB347', // terciario
-  '#FF8000', // acento
-];
-
 const lerp = (x, y, a) => x * (1 - a) + y * a;
 
 export default function CursorJellyBlob() {

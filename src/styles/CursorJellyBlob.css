@@ -10,29 +10,29 @@
 }
 
 .jelly-blob-0 {
-  width: 48px;
-  height: 48px;
-  background: #E68600;
-  opacity: 0.7;
+  width: 30px;
+  height: 30px;
+  background: var(--jellyblob-primary);
+  opacity: 1;
 }
 
 .jelly-blob-1 {
-  width: 42px;
-  height: 42px;
-  background: #FFD580;
-  opacity: 0.57;
+  width: 28px;
+  height: 28px;
+  background: var(--jellyblob-secondary);
+  opacity: 0.8;
 }
 
 .jelly-blob-2 {
-  width: 36px;
-  height: 36px;
-  background: #FFB347;
-  opacity: 0.44;
+  width: 26px;
+  height: 26px;
+  background: var(--jellyblob-tertiary);
+  opacity: 0.6;
 }
 
 .jelly-blob-3 {
-  width: 30px;
-  height: 30px;
-  background: #FF8000;
-  opacity: 0.31;
+  width: 24px;
+  height: 24px;
+  background: var(--jellyblob-tertiary);
+  opacity: 0.4;
 } 

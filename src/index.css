@@ -9,6 +9,9 @@
   --text-tertiary: #ffffff;
   --transparent-primary: #E6860020;
   --transparent-secondary: #E6860020;
+  --jellyblob-primary: red;
+  --jellyblob-secondary: #442432;
+  --jellyblob-tertiary: #c02948;
 }
 
 /* Dark theme */
@@ -22,6 +25,9 @@
   --text-tertiary: #ffffff;
   --transparent-primary: #ffffff20;
   --transparent-secondary: #ffffff20;
+  --jellyblob-primary: #b4f371;
+  --jellyblob-secondary: #b4f371;
+  --jellyblob-tertiary: #b4f371;
 }
 
 /* Base styles */
