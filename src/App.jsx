@@ -14,10 +14,16 @@ import UnityLogo from './assets/icons/unity.svg'
 import AndroidLogo from './assets/icons/android-studio.svg'
 import GitLogo from './assets/icons/git.svg'
 import GithubLogo from './assets/icons/github.svg'
+import JavaLogo from './assets/icons/java.svg'
+import CSharpLogo from './assets/icons/csharp.svg'
+import PhpLogo from './assets/icons/php.svg'
+import MySqlLogo from './assets/icons/mysql.svg'
 import TrelloLogo from './assets/icons/trello.svg'
 import { MdDownload } from 'react-icons/md'
-
-
+import CardProject from './components/CardProject'
+import Work1 from './assets/images/work1.png'
+import Work2 from './assets/images/work2.png'
+import Work3 from './assets/images/work3.png'
 
 function App() {
   const { t } = useTranslation()
@@ -58,19 +64,38 @@ function App() {
         <section id='skills' className="skills-section">
           <h1 className="skills-section-title">{t('skills')}</h1>
           <div className="skills-container-cards">
-            <CardSkill title="React" icon={ReactLogo} />
-            <CardSkill title="Firebase" icon={FirebaseLogo} />
             <CardSkill title="Kotlin" icon={KotlinLogo} />
-            <CardSkill title="Spring Boot" icon={SprintBootLogo} />
+            <CardSkill title="Java" icon={JavaLogo} />
+            <CardSkill title="PHP" icon={PhpLogo} />
+            <CardSkill title="C#" icon={CSharpLogo} />
             <CardSkill title="PostgreSQL" icon={PostgresLogo} />
+            <CardSkill title="MySql" icon={MySqlLogo} />
+            <CardSkill title="Firebase" icon={FirebaseLogo} />
+            <CardSkill title="React" icon={ReactLogo} />
+            <CardSkill title="Spring Boot" icon={SprintBootLogo} />
+            <CardSkill title="Android Studio" icon={AndroidLogo} />
             <CardSkill title="Figma" icon={FigmaLogo} />
             <CardSkill title="Unity" icon={UnityLogo} />
-            <CardSkill title="Android Studio" icon={AndroidLogo} />
             <CardSkill title="Git" icon={GitLogo} />
             <CardSkill title="GitHub" icon={GithubLogo} />
             <CardSkill title="Trello" icon={TrelloLogo} />
           </div>
         </section>
+        <section id='projects' className="projects-section">
+          <h1 className="projects-section-title">{t('projects')}</h1>
+          <div className='menu-projects'>
+            <button className='menu-projects-button'>{t('all')}</button>
+            <button className='menu-projects-button'>{t('mobile')}</button>
+            <button className='menu-projects-button'>{t('web')}</button>
+            <button className='menu-projects-button'>{t('videogames')}</button>
+          </div>
+          <div className='projects-container'>
+            <CardProject image={Work1} name="SkecthVibes" technologies={['PHP', 'MySql']} githubUrl={t('https://github.com/JimmyPiedrahita/SketchVibes')} />
+            <CardProject image={Work2} name="Frutastic Shoot" technologies={['C#', 'Unity']} githubUrl={t('https://github.com/JimmyPiedrahita/frutastic-shoot')} />
+            <CardProject image={Work3} name="ReportApp" technologies={['Java', 'Android Studio']} githubUrl={t('https://github.com/JimmyPiedrahita/Report_App')} />
+          </div>
+        </section>
+        
       </div>
     </>
   )
