@@ -31,6 +31,9 @@ export const translations = {
       enterEmail: 'Ingresa tu correo electrónico',
       enterMessage: 'Ingresa tu mensaje',
 
+      // Contact me
+      contactMe: 'Mantengamonos en contacto',
+
       // Hero
       hello: 'Hola, soy',
 
@@ -81,6 +84,9 @@ export const translations = {
 
         // Hero
         hello: 'Hello, I\'m',
+
+        // Contact me
+        contactMe: 'Let\'s keep in contact',
 
         // About
         aboutDescription: {

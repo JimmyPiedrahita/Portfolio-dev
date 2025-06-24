@@ -20,13 +20,47 @@ import PhpLogo from './assets/icons/php.svg'
 import MySqlLogo from './assets/icons/mysql.svg'
 import TrelloLogo from './assets/icons/trello.svg'
 import { MdDownload } from 'react-icons/md'
+import { FaFacebook, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 import CardProject from './components/CardProject'
 import Work1 from './assets/images/work1.png'
 import Work2 from './assets/images/work2.png'
 import Work3 from './assets/images/work3.png'
+import { useState } from 'react'
+import ContactForm from './components/ContactForm'
 
 function App() {
   const { t } = useTranslation()
+  // Definir proyectos con categoría
+  const projects = [
+    {
+      image: Work1,
+      name: 'SkecthVibes',
+      technologies: ['PHP', 'MySql'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/SketchVibes',
+      category: 'web',
+    },
+    {
+      image: Work2,
+      name: 'Frutastic Shoot',
+      technologies: ['C#', 'Unity'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/frutastic-shoot',
+      category: 'videogames',
+    },
+    {
+      image: Work3,
+      name: 'ReportApp',
+      technologies: ['Java', 'Android Studio'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/Report_App',
+      category: 'mobile',
+    },
+  ];
+  // Estado para el filtro
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  // Filtrar proyectos
+  const filteredProjects = selectedCategory === 'all'
+    ? projects
+    : projects.filter(p => p.category === selectedCategory);
   return (
     <>
       <CursorJellyBlob />
@@ -84,18 +118,66 @@ function App() {
         <section id='projects' className="projects-section">
           <h1 className="projects-section-title">{t('projects')}</h1>
           <div className='menu-projects'>
-            <button className='menu-projects-button'>{t('all')}</button>
-            <button className='menu-projects-button'>{t('mobile')}</button>
-            <button className='menu-projects-button'>{t('web')}</button>
-            <button className='menu-projects-button'>{t('videogames')}</button>
+            <button
+              className={`menu-projects-button${selectedCategory === 'all' ? ' active' : ''}`}
+              onClick={() => setSelectedCategory('all')}
+            >
+              {t('all')}
+            </button>
+            <button
+              className={`menu-projects-button${selectedCategory === 'mobile' ? ' active' : ''}`}
+              onClick={() => setSelectedCategory('mobile')}
+            >
+              {t('mobile')}
+            </button>
+            <button
+              className={`menu-projects-button${selectedCategory === 'web' ? ' active' : ''}`}
+              onClick={() => setSelectedCategory('web')}
+            >
+              {t('web')}
+            </button>
+            <button
+              className={`menu-projects-button${selectedCategory === 'videogames' ? ' active' : ''}`}
+              onClick={() => setSelectedCategory('videogames')}
+            >
+              {t('videogames')}
+            </button>
           </div>
           <div className='projects-container'>
-            <CardProject image={Work1} name="SkecthVibes" technologies={['PHP', 'MySql']} githubUrl={t('https://github.com/JimmyPiedrahita/SketchVibes')} />
-            <CardProject image={Work2} name="Frutastic Shoot" technologies={['C#', 'Unity']} githubUrl={t('https://github.com/JimmyPiedrahita/frutastic-shoot')} />
-            <CardProject image={Work3} name="ReportApp" technologies={['Java', 'Android Studio']} githubUrl={t('https://github.com/JimmyPiedrahita/Report_App')} />
+            {filteredProjects.map((project, idx) => (
+              <CardProject
+                key={project.name}
+                image={project.image}
+                name={project.name}
+                technologies={project.technologies}
+                githubUrl={project.githubUrl}
+              />
+            ))}
           </div>
         </section>
-        
+        <section id='contact' className="contact-section">
+          <h1 className="contact-section-title">{t('contactMe')}</h1>
+          <div className='contact-container'>
+            <div className='container-social-media'>
+              <a className='social-icon' target='_blank' href="https://www.facebook.com/JAPB2002">
+                <FaFacebook size={32} />
+              </a>
+              <a className='social-icon' target='_blank' href="https://www.instagram.com/jimmy_ap7">
+                <FaInstagram size={32} />
+              </a>
+              <a className='social-icon' target='_blank' href="https://github.com/JimmyPiedrahita">
+                <FaGithub size={32} />
+              </a>
+              <a className='social-icon' target='_blank' href="https://www.linkedin.com/in/jimmypiedrahita">
+                <FaLinkedin size={32} />
+              </a>
+              <a className='social-icon' target='_blank' href="mailto:jimmy22piedrahita@gmail.com">
+                <MdEmail size={32} />
+              </a>
+            </div>
+            <ContactForm />
+          </div>
+        </section>
       </div>
     </>
   )
