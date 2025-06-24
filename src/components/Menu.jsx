@@ -33,32 +33,30 @@ const Menu = () => {
   }, [])
 
   useEffect(() => {
-    const sectionElements = sections.map(s => document.getElementById(s.id)).filter(Boolean)
-    if (observerRef.current) {
-      observerRef.current.disconnect()
-    }
-    let prevRatio = 0
-    observerRef.current = new window.IntersectionObserver(
-      (entries) => {
-        // Ordenar por el ratio de intersección y top
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio || a.boundingClientRect.top - b.boundingClientRect.top)
-        if (visible.length > 0) {
-          setActiveSection(visible[0].target.id)
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px 0px -60% 0px', // activa cuando la sección está en la parte superior
-        threshold: [0.2, 0.5, 0.8],
+    const handleScroll = () => {
+      if (window.scrollY < 50) {
+        setActiveSection('home');
+        return;
       }
-    )
-    sectionElements.forEach(el => observerRef.current.observe(el))
-    return () => {
-      if (observerRef.current) observerRef.current.disconnect()
-    }
-  }, [])
+      const sectionElements = sections.map(s => document.getElementById(s.id)).filter(Boolean);
+      const viewportCenter = window.scrollY + window.innerHeight / 2;
+      let closestSection = 'home';
+      let minDistance = Infinity;
+      sectionElements.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const sectionCenter = rect.top + window.scrollY + rect.height / 2;
+        const distance = Math.abs(viewportCenter - sectionCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestSection = section.id;
+        }
+      });
+      setActiveSection(closestSection);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <nav className={`menu-container${isFixed ? ' fixed' : ''}`}>
