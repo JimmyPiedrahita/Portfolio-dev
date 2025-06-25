@@ -4,6 +4,8 @@ import LaptopModel from './components/LaptopModel'
 import { useTranslation } from './translations'
 import CursorJellyBlob from './components/CursorJellyBlob'
 import CardSkill from './components/CardSkill'
+import TypeWriter from './components/TypeWriter'
+import './styles/TypeWriter.css'
 import ReactLogo from './assets/icons/react.svg'
 import FirebaseLogo from './assets/icons/firebase.svg'
 import KotlinLogo from './assets/icons/kotlin.svg'
@@ -72,7 +74,7 @@ function App() {
               <p>{t('hello')}</p>
             </div>
             <h1>Jimmy Piedrahita</h1>
-            <h3>SOFTWARE DEVELOPER |</h3>
+            <h3><TypeWriter phrases={['SOFTWARE DEVELOPER', 'FRONTEND DEVELOPER', 'MOBILE DEVELOPER', 'GAME DEVELOPER']} /></h3>
           </div>
           <LaptopModel />
         </section>
