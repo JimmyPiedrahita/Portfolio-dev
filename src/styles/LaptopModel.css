@@ -1,0 +1,51 @@
+.laptop-model-container {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.laptop-model-container:hover {
+  transform: scale(1.01);
+}
+
+/* Asegurar que el canvas sea responsive */
+.laptop-model-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Añadir un sutil efecto de sombra */
+.laptop-model-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.laptop-model-container:hover::before {
+  opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .laptop-model-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .laptop-model-container {
+    height: 250px;
+  }
+}

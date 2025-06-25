@@ -1,6 +1,6 @@
 import './App.css'
 import Menu from './components/Menu'
-import heroImage from './assets/images/hero.png'
+import LaptopModel from './components/LaptopModel'
 import { useTranslation } from './translations'
 import CursorJellyBlob from './components/CursorJellyBlob'
 import CardSkill from './components/CardSkill'
@@ -74,7 +74,7 @@ function App() {
             <h1>Jimmy Piedrahita</h1>
             <h3>SOFTWARE DEVELOPER |</h3>
           </div>
-          <img src={heroImage} alt="hero" />
+          <LaptopModel />
         </section>
         <section id='about' className="about-section" >
           <h1 className="about-section-title">{t('about')}</h1>
