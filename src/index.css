@@ -12,6 +12,8 @@
   --jellyblob-primary: red;
   --jellyblob-secondary: #442432;
   --jellyblob-tertiary: #c02948;
+  --background: #ffffff;
+  --background-solid: #ffffff;
 }
 
 /* Dark theme */
@@ -28,6 +30,8 @@
   --jellyblob-primary: #b4f371;
   --jellyblob-secondary: #b4f371;
   --jellyblob-tertiary: #b4f371;
+  --background: #222222;
+  --background-solid: #222222;
 }
 
 /* Base styles */

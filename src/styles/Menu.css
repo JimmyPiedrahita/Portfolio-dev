@@ -13,9 +13,9 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
+
+/* Quitamos el backdrop-filter para el modo móvil en media query */
 
 .menu-list {
   display: flex;
@@ -71,10 +71,16 @@
     left: 0;
     right: 0;
     background-color: var(--background);
+    opacity: 1;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
+    /* Aseguramos que el fondo no sea transparente */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    /* Color de fondo sólido específico para el menú desplegado */
+    background-color: var(--background-solid, #ffffff);
   }
   
   .menu-list.show {
@@ -83,11 +89,25 @@
   
   .menu-container.menu-open {
     background-color: var(--background);
+    /* Aseguramos que el fondo no sea transparente */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    /* Color de fondo sólido para la barra cuando el menú está abierto */
+    background-color: var(--background-solid, #ffffff);
+    opacity: 1;
   }
   
   .toggle-container {
     display: flex;
     margin-top: 15px;
     justify-content: center;
+  }
+}
+
+/* Mantenemos el backdrop filter solo para pantallas más grandes */
+@media screen and (min-width: 769px) {
+  .menu-container.fixed {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 }
