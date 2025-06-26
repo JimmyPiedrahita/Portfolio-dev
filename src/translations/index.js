@@ -1,6 +1,13 @@
 import { useLanguage } from '../hooks/useLanguage'
 export const translations = {
     es: {
+      // Phases
+      phases: {
+        phase1: '“Primero resuelve el problema, después escribe el código”',
+        phase2: '“La mejor manera de predecir el futuro es creándolo”',
+        phase3: '“No se trata de tener las ideas correctas, sino de hacer que las cosas sucedan”'
+      },
+
       // Navegación
       home: 'Inicio',
       about: 'Sobre mi',
@@ -52,6 +59,13 @@ export const translations = {
       }
     },
     en: {
+        // Phases
+        phases: {
+          phase1: '"First solve the problem, then write the code"',
+          phase2: '"The best way to predict the future is to create it"',
+          phase3: '"It\'s not about having the right ideas, it\'s about making things happen"'
+        },
+
         // Navigation
         home: 'Home',
         about: 'About',

@@ -74,7 +74,7 @@ function App() {
               <p>{t('hello')}</p>
             </div>
             <h1>Jimmy Piedrahita</h1>
-            <h3><TypeWriter phrases={['SOFTWARE DEVELOPER', 'FRONTEND DEVELOPER', 'MOBILE DEVELOPER', 'GAME DEVELOPER']} /></h3>
+            <h3><TypeWriter phrases={[t('phases.phase1'), t('phases.phase2'), t('phases.phase3')]} /></h3>
           </div>
           <LaptopModel />
         </section>
@@ -92,10 +92,10 @@ function App() {
             <span className="highlight-description">{t('aboutDescription.part9')}</span>
             <span>{t('aboutDescription.part10')}</span>
           </p>
-          <button className="about-section-button">
+          <a href="/documents/CV Jimmy Piedrahita - Full Stack.pdf" download className="about-section-button">
             <MdDownload style={{ marginRight: '8px', verticalAlign: 'middle' }} />
             {t('download')}
-          </button>
+          </a>
         </section>
         <section id='skills' className="skills-section">
           <h1 className="skills-section-title">{t('skills')}</h1>
