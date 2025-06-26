@@ -63,3 +63,14 @@
 .contact-form-button:hover {
   font-weight: 700;
 }
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .contact-form {
+    width: 100%;
+  }
+  
+  .contact-form-group textarea {
+    min-height: 120px;
+  }
+}

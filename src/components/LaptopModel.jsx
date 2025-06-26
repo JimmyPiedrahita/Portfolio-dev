@@ -1,4 +1,4 @@
-import { useRef, useEffect, Suspense } from 'react'
+import { useRef, useEffect, Suspense, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF } from '@react-three/drei'
 import { useTheme } from '../hooks/useTheme'
@@ -7,6 +7,18 @@ import '../styles/LaptopModel.css'
 function Laptop({ ...props }) {
   const { scene } = useGLTF('/models/laptop.glb')
   const meshRef = useRef()
+  const [isMobile, setIsMobile] = useState(false)
+  
+  useEffect(() => {
+    // Detectar si es un dispositivo móvil
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
   
   // Animación de rotación suave
   useFrame((state, delta) => {
@@ -19,7 +31,7 @@ function Laptop({ ...props }) {
     <primitive 
       ref={meshRef}
       object={scene} 
-      scale={[2.5, 2.5, 2.5]} 
+      scale={isMobile ? [1.8, 1.8, 1.8] : [2.5, 2.5, 2.5]} 
       position={[0, 0, 0]}
       {...props} 
     />

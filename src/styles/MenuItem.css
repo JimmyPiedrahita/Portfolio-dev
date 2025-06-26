@@ -13,3 +13,13 @@
     background-color: var(--primary);
     font-weight: 600;
 }
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .btn-menu {
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+        margin: 5px 0;
+    }
+}

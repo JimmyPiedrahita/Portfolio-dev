@@ -84,3 +84,11 @@
   background: #222;
   color: #fff;
 }
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .card-project {
+        width: 100%;
+        height: 300px;
+    }
+}

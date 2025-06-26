@@ -4,6 +4,7 @@ import MenuItem from './MenuItem'
 import ThemeToggle from './ThemeToggle'
 import LanguageToggle from './LanguageToogle'
 import { useTranslation } from '../translations'
+import { FaBars, FaTimes } from 'react-icons/fa'
 
 const sections = [
   { id: 'home', labelKey: 'home' },
@@ -17,6 +18,7 @@ const Menu = () => {
   const { t } = useTranslation()
   const [isFixed, setIsFixed] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const [menuOpen, setMenuOpen] = useState(false)
   const observerRef = useRef(null)
 
   useEffect(() => {
@@ -58,19 +60,35 @@ const Menu = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  }
+  
+  const closeMenu = () => {
+    setMenuOpen(false);
+  }
+
   return (
-    <nav className={`menu-container${isFixed ? ' fixed' : ''}`}>
-      <ul className="menu-list">
+    <nav className={`menu-container${isFixed ? ' fixed' : ''}${menuOpen ? ' menu-open' : ''}`}>
+      <div className="menu-mobile-header">
+        <button className="menu-toggle-btn" onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+      <ul className={`menu-list${menuOpen ? ' show' : ''}`}>
         {sections.map(section => (
           <MenuItem
             key={section.id}
             label={t(section.labelKey)}
             to={`#${section.id}`}
             active={activeSection === section.id}
+            onClick={closeMenu}
           />
         ))}
-        <LanguageToggle />
-        <ThemeToggle />
+        <div className="toggle-container">
+          <LanguageToggle />
+          <ThemeToggle />
+        </div>
       </ul>
     </nav>
   )

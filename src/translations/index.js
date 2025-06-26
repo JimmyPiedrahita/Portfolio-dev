@@ -3,9 +3,9 @@ export const translations = {
     es: {
       // Phases
       phases: {
-        phase1: '“Primero resuelve el problema, después escribe el código”',
-        phase2: '“La mejor manera de predecir el futuro es creándolo”',
-        phase3: '“No se trata de tener las ideas correctas, sino de hacer que las cosas sucedan”'
+        phase1: 'Desarrollador de software',
+        phase2: 'Arquitecto de soluciones',
+        phase3: 'Diseñador de experiencias'
       },
 
       // Navegación
@@ -61,9 +61,9 @@ export const translations = {
     en: {
         // Phases
         phases: {
-          phase1: '"First solve the problem, then write the code"',
-          phase2: '"The best way to predict the future is to create it"',
-          phase3: '"It\'s not about having the right ideas, it\'s about making things happen"'
+          phase1: 'Software developer',
+          phase2: 'Solutions architect',
+          phase3: 'Experience designer'
         },
 
         // Navigation
