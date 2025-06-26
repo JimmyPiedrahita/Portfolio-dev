@@ -19,8 +19,8 @@ function Laptop({ ...props }) {
     <primitive 
       ref={meshRef}
       object={scene} 
-      scale={[0.09, 0.09, 0.09]} 
-      position={[0, -0.5, 0]}
+      scale={[2.5, 2.5, 2.5]} 
+      position={[0, 0, 0]}
       {...props} 
     />
   )
