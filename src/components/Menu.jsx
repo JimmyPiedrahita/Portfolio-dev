@@ -23,7 +23,9 @@ const Menu = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      // Si el menú está abierto en móvil, mantener isFixed en true
+      // para evitar que desaparezca cuando se hace scroll al principio
+      if (menuOpen || window.scrollY > 0) {
         setIsFixed(true)
       } else {
         setIsFixed(false)
@@ -32,7 +34,7 @@ const Menu = () => {
     window.addEventListener('scroll', handleScroll)
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [menuOpen])
 
   useEffect(() => {
     const handleScroll = () => {
