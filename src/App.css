@@ -233,22 +233,30 @@
 @media screen and (max-width: 768px) {
     .main-container {
         width: 95%;
-        padding-top: 70px;
+        padding-top: 0;
+        padding-bottom: 50px;
     }
 
     /* Hero Section */
     .hero-section {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
     }
-
+    
+    /* Invertir el orden de los elementos en móvil: modelo 3D arriba, contenido abajo */
     .hero-section-content {
         align-items: center;
         text-align: center;
+        order: 2; /* Poner el contenido abajo */
+    }
+    
+    /* Poner el modelo 3D arriba */
+    .laptop-model-container {
+        order: 1;
     }
 
     .hero-section-content h1 {
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .hero-section-content h3 {

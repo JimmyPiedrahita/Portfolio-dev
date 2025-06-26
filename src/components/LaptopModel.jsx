@@ -7,17 +7,24 @@ import '../styles/LaptopModel.css'
 function Laptop({ ...props }) {
   const { scene } = useGLTF('/models/laptop.glb')
   const meshRef = useRef()
-  const [isMobile, setIsMobile] = useState(false)
+  const [deviceType, setDeviceType] = useState('desktop')
   
   useEffect(() => {
-    // Detectar si es un dispositivo móvil
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768)
+    // Detectar el tipo de dispositivo
+    const checkDeviceType = () => {
+      const width = window.innerWidth
+      if (width <= 480) {
+        setDeviceType('phone')
+      } else if (width <= 768) {
+        setDeviceType('tablet')
+      } else {
+        setDeviceType('desktop')
+      }
     }
     
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
+    checkDeviceType()
+    window.addEventListener('resize', checkDeviceType)
+    return () => window.removeEventListener('resize', checkDeviceType)
   }, [])
   
   // Animación de rotación suave
@@ -27,12 +34,34 @@ function Laptop({ ...props }) {
     }
   })
 
+  // Determinar la escala según el tipo de dispositivo
+  const getScale = () => {
+    switch(deviceType) {
+      case 'phone':
+        return [2.5, 2.5, 2.5]; // Escala reducida para teléfonos
+      case 'tablet':
+        return [2.5, 2.5, 2.5]; // Escala para tablets
+      default:
+        return [2.5, 2.5, 2.5]; // Escala para desktop
+    }
+  }
+  
+  // Determinar la posición según el tipo de dispositivo
+  const getPosition = () => {
+    switch(deviceType) {
+      case 'phone':
+        return [0, -0.3, 0]; // Ajuste de posición para teléfonos (menos desplazamiento)
+      default:
+        return [0, 0, 0]; // Posición para otros dispositivos
+    }
+  }
+
   return (
     <primitive 
       ref={meshRef}
       object={scene} 
-      scale={isMobile ? [1.8, 1.8, 1.8] : [2.5, 2.5, 2.5]} 
-      position={[0, 0, 0]}
+      scale={getScale()} 
+      position={getPosition()}
       {...props} 
     />
   )
