@@ -38,11 +38,11 @@ function Laptop({ ...props }) {
   const getScale = () => {
     switch(deviceType) {
       case 'phone':
-        return [2.5, 2.5, 2.5]; // Escala reducida para teléfonos
+        return [1.3, 1.3, 1.3]; // Escala reducida para teléfonos
       case 'tablet':
-        return [2.5, 2.5, 2.5]; // Escala para tablets
+        return [1, 1, 1]; // Escala para tablets
       default:
-        return [2.5, 2.5, 2.5]; // Escala para desktop
+        return [1.1, 1.1, 1.1]; // Escala para desktop
     }
   }
   
@@ -50,9 +50,9 @@ function Laptop({ ...props }) {
   const getPosition = () => {
     switch(deviceType) {
       case 'phone':
-        return [0, -0.3, 0]; // Ajuste de posición para teléfonos (menos desplazamiento)
+        return [0, -0.5, 0]; // Ajuste de posición para teléfonos (menos desplazamiento)
       default:
-        return [0, 0, 0]; // Posición para otros dispositivos
+        return [0, -0.5, 0]; // Posición para otros dispositivos
     }
   }
 
