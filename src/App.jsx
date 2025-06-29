@@ -161,19 +161,19 @@ function App() {
           <h1 className="contact-section-title">{t('contactMe')}</h1>
           <div className='contact-container'>
             <div className='container-social-media'>
-              <a className='social-icon' target='_blank' href="https://www.facebook.com/JAPB2002">
+              <a className='social-icon' target='_blank' href="https://www.facebook.com/JAPB2002" aria-label="Perfil de Facebook">
                 <FaFacebook size={32} />
               </a>
-              <a className='social-icon' target='_blank' href="https://www.instagram.com/jimmy_ap7">
+              <a className='social-icon' target='_blank' href="https://www.instagram.com/jimmy_ap7" aria-label="Perfil de Instagram">
                 <FaInstagram size={32} />
               </a>
-              <a className='social-icon' target='_blank' href="https://github.com/JimmyPiedrahita">
+              <a className='social-icon' target='_blank' href="https://github.com/JimmyPiedrahita" aria-label="Perfil de GitHub">
                 <FaGithub size={32} />
               </a>
-              <a className='social-icon' target='_blank' href="https://www.linkedin.com/in/jimmypiedrahita">
+              <a className='social-icon' target='_blank' href="https://www.linkedin.com/in/jimmypiedrahita" aria-label="Perfil de LinkedIn">
                 <FaLinkedin size={32} />
               </a>
-              <a className='social-icon' target='_blank' href="mailto:jimmy22piedrahita@gmail.com">
+              <a className='social-icon' target='_blank' href="mailto:jimmy22piedrahita@gmail.com" aria-label="Enviar correo electrónico">
                 <MdEmail size={32} />
               </a>
             </div>

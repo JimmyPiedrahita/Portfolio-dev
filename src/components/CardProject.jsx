@@ -17,6 +17,7 @@ function CardProject({ name, image, githubUrl, technologies = [] }) {
           className={`github-btn${isHovered ? ' visible' : ''}`}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Ver proyecto ${name} en GitHub`}
         >
           <FaGithub size={28} />
         </a>
