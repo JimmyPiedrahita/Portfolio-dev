@@ -86,7 +86,7 @@
 
 .about-section-button {
     background-color: var(--primary);
-    color: var(--text-primary);
+    color: var(--text-tertiary);
     border: none;
     border-radius: 100px;
     padding: 5px 20px;
@@ -94,10 +94,12 @@
     font-size: 15px;
     font-weight: 400;
     cursor: pointer;
+    font-weight: 600;
+
 }
 
 .about-section-button:hover {
-    font-weight: 600;
+    scale: 1.05;
 }
 
 /* Skills */

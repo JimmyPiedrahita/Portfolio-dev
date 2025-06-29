@@ -11,6 +11,7 @@
 .btn-menu:hover,
 .btn-menu.active {
     background-color: var(--primary);
+    color: var(--text-tertiary);
     font-weight: 600;
 }
 

@@ -2,10 +2,10 @@
   /* Light theme (default) */
   --bg-primary: #ffffff;
   --placeholder: #676767;
-  --primary: #E68600;
+  --primary: #E65E00;
   --shadow-25: #00000025;
   --text-primary: #000000;
-  --text-secondary: #E68600;
+  --text-secondary: #E65E00;
   --text-tertiary: #ffffff;
   --transparent-primary: #E6860020;
   --transparent-secondary: #E6860020;
@@ -21,11 +21,11 @@
 [data-theme="dark"] {
   --bg-primary: #222222;
   --placeholder: #DBDBDB;
-  --primary: #E68600;
+  --primary: #FB8C00; /* Orange */
   --shadow-25: #00000025;
-  --text-primary: #ffffff;
-  --text-secondary: #E68600;
-  --text-tertiary: #ffffff;
+  --text-primary: #ffffff; /* White */
+  --text-secondary: #FB8C00; /* Orange */
+  --text-tertiary: #000000; /* Black */
   --transparent-primary: #ffffff20;
   --transparent-secondary: #ffffff20;
   --jellyblob-primary: #b4f371;

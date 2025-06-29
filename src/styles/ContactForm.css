@@ -55,13 +55,14 @@
   cursor: pointer;
   background: var(--primary);
   color: var(--text-tertiary);
+  font-weight: 600;
   margin: 0 auto;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
 
 .contact-form-button:hover {
-  font-weight: 700;
+  scale: 1.05;
 }
 
 /* Media query para dispositivos móviles */
