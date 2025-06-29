@@ -74,12 +74,12 @@ function App() {
               <p>{t('hello')}</p>
             </div>
             <h1>Jimmy Piedrahita</h1>
-            <h3><TypeWriter phrases={[t('phases.phase1'), t('phases.phase2'), t('phases.phase3')]} /></h3>
+            <h2><TypeWriter phrases={[t('phases.phase1'), t('phases.phase2'), t('phases.phase3')]} /></h2>
           </div>
           <LaptopModel />
         </section>
         <section id='about' className="about-section" >
-          <h1 className="about-section-title">{t('about')}</h1>
+          <h2 className="about-section-title">{t('about')}</h2>
           <p className="about-section-description">
             <span className="highlight-description">{t('aboutDescription.part1')}</span>
             <span>{t('aboutDescription.part2')}</span>
@@ -98,7 +98,7 @@ function App() {
           </a>
         </section>
         <section id='skills' className="skills-section">
-          <h1 className="skills-section-title">{t('skills')}</h1>
+          <h2 className="skills-section-title">{t('skills')}</h2>
           <div className="skills-container-cards">
             <CardSkill title="Kotlin" icon={KotlinLogo} />
             <CardSkill title="Java" icon={JavaLogo} />
@@ -118,7 +118,7 @@ function App() {
           </div>
         </section>
         <section id='projects' className="projects-section">
-          <h1 className="projects-section-title">{t('projects')}</h1>
+          <h2 className="projects-section-title">{t('projects')}</h2>
           <div className='menu-projects'>
             <button
               className={`menu-projects-button${selectedCategory === 'all' ? ' active' : ''}`}
@@ -158,7 +158,7 @@ function App() {
           </div>
         </section>
         <section id='contact' className="contact-section">
-          <h1 className="contact-section-title">{t('contactMe')}</h1>
+          <h2 className="contact-section-title">{t('contactMe')}</h2>
           <div className='contact-container'>
             <div className='container-social-media'>
               <a className='social-icon' target='_blank' href="https://www.facebook.com/JAPB2002" aria-label="Perfil de Facebook">

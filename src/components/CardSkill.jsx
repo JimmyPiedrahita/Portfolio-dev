@@ -11,7 +11,7 @@ function CardSkill({ title, icon }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="card-skill-content">
-        <h4>{title}</h4>
+        <h3>{title}</h3>
         <img src={icon} alt={title} />
       </div>
     </div>
