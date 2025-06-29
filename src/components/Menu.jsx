@@ -87,10 +87,12 @@ const Menu = () => {
             onClick={closeMenu}
           />
         ))}
-        <div className="toggle-container">
-          <LanguageToggle />
-          <ThemeToggle />
-        </div>
+        <li className="toggle-list-item">
+          <div className="toggle-container">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+        </li>
       </ul>
     </nav>
   )

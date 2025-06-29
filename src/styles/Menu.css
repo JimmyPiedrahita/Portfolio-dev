@@ -49,6 +49,12 @@
   gap: 10px;
 }
 
+.toggle-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Media query para dispositivos móviles */
 @media screen and (max-width: 768px) {
   .menu-container {
@@ -96,7 +102,7 @@
     opacity: 1;
   }
   
-  .toggle-container {
+  .toggle-list-item .toggle-container {
     display: flex;
     margin-top: 15px;
     justify-content: center;
