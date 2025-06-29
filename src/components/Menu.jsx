@@ -73,7 +73,12 @@ const Menu = () => {
   return (
     <nav className={`menu-container${isFixed ? ' fixed' : ''}${menuOpen ? ' menu-open' : ''}`}>
       <div className="menu-mobile-header">
-        <button className="menu-toggle-btn" onClick={toggleMenu}>
+        <button 
+          className="menu-toggle-btn" 
+          onClick={toggleMenu} 
+          aria-label={menuOpen ? t('closeMenu') : t('openMenu')} 
+          aria-expanded={menuOpen}
+        >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>

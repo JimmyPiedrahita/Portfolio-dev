@@ -23,6 +23,8 @@ export const translations = {
       web: 'Web',
       mobile: 'Movil',
       videogames: 'Videojuegos',
+      openMenu: 'Abrir menú',
+      closeMenu: 'Cerrar menú',
       
       // Temas
       lightMode: 'Modo Claro',
@@ -81,6 +83,8 @@ export const translations = {
         web: 'Web',
         mobile: 'Mobile',
         videogames: 'Videogames',
+        openMenu: 'Open menu',
+        closeMenu: 'Close menu',
         
         // Temas
         lightMode: 'Light Mode',
@@ -142,4 +146,4 @@ export const translations = {
       t: (key, params = {}) => t(key, language, params),
       language
     }
-  } 
+  }
