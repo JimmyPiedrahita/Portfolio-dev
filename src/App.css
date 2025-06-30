@@ -77,12 +77,12 @@
 
 .about-section-description {
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--text-primary);
 }
 
 .highlight-description {
-    color: var(--primary);
+    font-weight: 700;
 }
 
 .about-section-button {

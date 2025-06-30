@@ -2,11 +2,11 @@
   /* Light theme (default) */
   --bg-primary: #ffffff;
   --placeholder: #676767;
-  --primary: #E65E00;
+  --primary: #FB8C00;
   --shadow-25: #00000025;
-  --text-primary: #000000;
-  --text-secondary: #E65E00;
-  --text-tertiary: #ffffff;
+  --text-primary: #606887;
+  --text-secondary: #606887;
+  --text-tertiary: #343849;
   --transparent-primary: #E6860020;
   --transparent-secondary: #E6860020;
   --jellyblob-primary: red;
@@ -21,11 +21,11 @@
 [data-theme="dark"] {
   --bg-primary: #222222;
   --placeholder: #DBDBDB;
-  --primary: #FB8C00; /* Orange */
+  --primary: #FB8C00;
   --shadow-25: #00000025;
-  --text-primary: #ffffff; /* White */
-  --text-secondary: #FB8C00; /* Orange */
-  --text-tertiary: #000000; /* Black */
+  --text-primary: #aab2d1;
+  --text-secondary: #FB8C00;
+  --text-tertiary: #000000;
   --transparent-primary: #ffffff20;
   --transparent-secondary: #ffffff20;
   --jellyblob-primary: #b4f371;
