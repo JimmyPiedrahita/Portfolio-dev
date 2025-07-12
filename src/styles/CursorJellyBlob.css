@@ -7,32 +7,12 @@
   z-index: 9999;
   mix-blend-mode: difference;
   transition: background 0.3s;
+  transform-origin: center;
 }
 
 .jelly-blob-0 {
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   background: var(--jellyblob-primary);
   opacity: 1;
-}
-
-.jelly-blob-1 {
-  width: 28px;
-  height: 28px;
-  background: var(--jellyblob-secondary);
-  opacity: 0.8;
-}
-
-.jelly-blob-2 {
-  width: 26px;
-  height: 26px;
-  background: var(--jellyblob-tertiary);
-  opacity: 0.6;
-}
-
-.jelly-blob-3 {
-  width: 24px;
-  height: 24px;
-  background: var(--jellyblob-tertiary);
-  opacity: 0.4;
 } 
