@@ -5,14 +5,42 @@
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
   transition: background 0.3s;
   transform-origin: center;
 }
 
-.jelly-blob-0 {
-  width: 45px;
-  height: 45px;
-  background: var(--jellyblob-primary);
-  opacity: 1;
+/* Punto central del cursor */
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--cursor-dot-color);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: normal;
+}
+
+/* Círculo exterior alrededor del cursor */
+.cursor-circle {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid var(--cursor-circle-color);
+  background-color: transparent;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: normal;
+}
+
+/* Colores específicos según el tema */
+:root {
+  --cursor-dot-color: #000000;
+  --cursor-circle-color: #000000;
+}
+
+[data-theme="dark"] {
+  --cursor-dot-color: #ffffff;
+  --cursor-circle-color: #ffffff;
 } 

@@ -2,7 +2,7 @@
   /* Light theme (default) */
   --bg-primary: #ffffff;
   --placeholder: #676767;
-  --primary: #FB8C00;
+  --primary: #9F3B44;
   --shadow-25: #00000025;
   --text-primary: #606887;
   --text-secondary: #606887;
@@ -21,10 +21,10 @@
 [data-theme="dark"] {
   --bg-primary: #222222;
   --placeholder: #DBDBDB;
-  --primary: #FB8C00;
+  --primary: #9F3B44;
   --shadow-25: #00000025;
   --text-primary: #aab2d1;
-  --text-secondary: #FB8C00;
+  --text-secondary: #9F3B44;
   --text-tertiary: #000000;
   --transparent-primary: #ffffff20;
   --transparent-secondary: #ffffff20;

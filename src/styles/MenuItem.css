@@ -10,9 +10,24 @@
 
 .btn-menu:hover,
 .btn-menu.active {
-    background-color: var(--primary);
-    color: var(--text-tertiary);
+    background-color: transparent;
+    color: var(--text-primary);
     font-weight: 600;
+    position: relative;
+}
+
+.btn-menu:hover::after,
+.btn-menu.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #9F3B44;
+    display: block;
 }
 
 /* Media query para dispositivos móviles */
