@@ -29,6 +29,19 @@ export const ThemeProvider = ({ children }) => {
     setIsDarkMode(theme === 'dark')
   }
 
+  // Aplicar clase no-transition durante la carga inicial
+  useEffect(() => {
+    // Agregar clase para prevenir transiciones durante la carga inicial
+    document.documentElement.classList.add('no-transition');
+    
+    // Quitar la clase después de un momento para permitir transiciones futuras
+    const timeoutId = setTimeout(() => {
+      document.documentElement.classList.remove('no-transition');
+    }, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   useEffect(() => {
     // Guardar el tema en localStorage
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
@@ -49,4 +62,4 @@ export const ThemeProvider = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   )
-} 
+}

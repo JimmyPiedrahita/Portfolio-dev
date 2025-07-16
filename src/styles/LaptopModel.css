@@ -9,9 +9,7 @@
   transition: all 0.3s ease;
 }
 
-.laptop-model-container:hover {
-  transform: scale(1.01);
-}
+/* Se eliminó el efecto hover de escala */
 
 /* Asegurar que el canvas sea responsive */
 .laptop-model-container canvas {
@@ -33,9 +31,7 @@
   transition: opacity 0.3s ease;
 }
 
-.laptop-model-container:hover::before {
-  opacity: 1;
-}
+/* Se eliminó el efecto hover de sombra */
 
 /* Responsive design */
 @media (max-width: 768px) {

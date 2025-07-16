@@ -36,6 +36,12 @@
   --background-overlay: rgba(34, 34, 34, 0.85);
 }
 
+/* Evitar transiciones durante la carga inicial */
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
 /* Base styles */
 * {
   margin: 0;
