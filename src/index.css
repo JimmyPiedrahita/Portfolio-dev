@@ -2,19 +2,24 @@
   /* Light theme (default) */
   --bg-primary: #ffffff;
   --placeholder: #676767;
-  --primary: #9F3B44;
-  --shadow-25: #00000025;
+  --primary: #ffabb2;
   --text-primary: #606887;
   --text-secondary: #606887;
   --text-tertiary: #343849;
+  --text-tittle: #000000;
   --transparent-primary: #E6860020;
   --transparent-secondary: #E6860020;
-  --jellyblob-primary: red;
-  --jellyblob-secondary: #442432;
-  --jellyblob-tertiary: #c02948;
   --background: #ffffff;
-  --background-solid: #ffffff;
   --background-overlay: rgba(255, 255, 255, 0.85);
+  --cursor-dot-color: #000000;
+  --cursor-circle-color: #000000;
+  
+  /* Colores del gradiente para el nombre (modo claro) */
+  --gradient-color-1: #9F3B44;
+  --gradient-color-2: #58a172;
+  --gradient-color-3: #ac991f;
+  --gradient-color-4: #F1713F;
+  --gradient-color-5: #9F3B44;
 }
 
 /* Dark theme */
@@ -22,18 +27,23 @@
   --bg-primary: #222222;
   --placeholder: #DBDBDB;
   --primary: #9F3B44;
-  --shadow-25: #00000025;
   --text-primary: #aab2d1;
-  --text-secondary: #9F3B44;
-  --text-tertiary: #000000;
+  --text-secondary: #aab2d1;
+  --text-tertiary: #aab2d1;
+  --text-tittle: #000000;
   --transparent-primary: #ffffff20;
   --transparent-secondary: #ffffff20;
-  --jellyblob-primary: #b4f371;
-  --jellyblob-secondary: #b4f371;
-  --jellyblob-tertiary: #b4f371;
   --background: #222222;
-  --background-solid: #222222;
   --background-overlay: rgba(34, 34, 34, 0.85);
+  --cursor-dot-color: #ffffff;
+  --cursor-circle-color: #ffffff;
+  
+  /* Colores del gradiente para el nombre (modo oscuro) - más brillantes para mejor visibilidad */
+  --gradient-color-1: #ED4D58;
+  --gradient-color-2: #93C6E7;
+  --gradient-color-3: #B5EAD7;
+  --gradient-color-4: #FFAAA5;
+  --gradient-color-5: #ED4D58;
 }
 
 /* Evitar transiciones durante la carga inicial */

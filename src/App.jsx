@@ -93,7 +93,7 @@ function App() {
             <span>{t('aboutDescription.part10')}</span>
           </p>
           <a href="/documents/CV Jimmy Piedrahita - Full Stack.pdf" download className="about-section-button">
-            <MdDownload style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+            <MdDownload className="button-icon" />
             {t('download')}
           </a>
         </section>

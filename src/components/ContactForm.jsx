@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import '../styles/ContactForm.css'
 import { useTranslation } from '../translations'
 import { useForm, ValidationError } from '@formspree/react'
+import { IoSend } from 'react-icons/io5'
 
 function ContactForm() {
   const { t } = useTranslation()
@@ -37,7 +38,7 @@ function ContactForm() {
         <ValidationError prefix={t('message')} field="message" errors={state.errors} />
       </div>
       <button className="contact-form-button" type="submit" disabled={state.submitting}>
-        {t('submit')}
+        <IoSend className="button-icon" /> {t('submit')}
       </button>
     </form>
   )

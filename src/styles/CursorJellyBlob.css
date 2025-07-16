@@ -33,14 +33,3 @@
   z-index: 9999;
   mix-blend-mode: normal;
 }
-
-/* Colores específicos según el tema */
-:root {
-  --cursor-dot-color: #000000;
-  --cursor-circle-color: #000000;
-}
-
-[data-theme="dark"] {
-  --cursor-dot-color: #ffffff;
-  --cursor-circle-color: #ffffff;
-} 
