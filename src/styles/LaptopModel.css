@@ -4,34 +4,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
-
-/* Se eliminó el efecto hover de escala */
 
 /* Asegurar que el canvas sea responsive */
 .laptop-model-container canvas {
   width: 100% !important;
   height: 100% !important;
 }
-
-/* Añadir un sutil efecto de sombra */
-.laptop-model-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Se eliminó el efecto hover de sombra */
 
 /* Responsive design */
 @media (max-width: 768px) {
