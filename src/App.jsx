@@ -146,7 +146,7 @@ function App() {
             </button>
           </div>
           <div className='projects-container'>
-            {filteredProjects.map((project, idx) => (
+            {filteredProjects.map((project) => (
               <CardProject
                 key={project.name}
                 image={project.image}

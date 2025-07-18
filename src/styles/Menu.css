@@ -55,6 +55,21 @@
   justify-content: center;
 }
 
+/* Media query para tablets */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .menu-container {
+    padding: 15px 30px;
+  }
+  
+  .menu-list {
+    gap: 15px;
+  }
+  
+  .toggle-container {
+    gap: 15px;
+  }
+}
+
 /* Media query para dispositivos móviles */
 @media screen and (max-width: 768px) {
   .menu-container {

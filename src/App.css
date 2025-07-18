@@ -7,6 +7,7 @@
     gap: 100px;
     padding-top: 100px;
     padding-bottom: 250px;
+    max-width: 90vw;
 }
 
 /* Hero Section */
@@ -288,6 +289,89 @@
 
 .social-icon:hover {
     color: var(--primary);
+}
+
+/* Reglas para pantallas pequeñas de laptop */
+@media screen and (max-width: 1200px) and (min-width: 1025px) {
+    .main-container {
+        width: 85%;
+        max-width: 900px;
+    }
+
+    .hero-section-content h1 {
+        font-size: 70px;
+    }
+
+    .skills-container-cards {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+    }
+}
+
+/* Reglas de CSS responsivo para tablets */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .main-container {
+        width: 90%;
+        padding-top: 80px;
+        padding-bottom: 200px;
+    }
+
+    /* Hero Section para tablets */
+    .hero-section {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-section-content {
+        align-items: center;
+        order: 2;
+    }
+
+    .laptop-model-container {
+        order: 1;
+    }
+
+    .hero-section-content h1 {
+        font-size: 65px;
+    }
+
+    .hero-section-content h2 {
+        font-size: 18px;
+        letter-spacing: 2.5px;
+    }
+
+    /* About Section para tablets */
+    .about-section-description {
+        text-align: center;
+        font-size: 14px;
+        max-width: 600px;
+    }
+
+    /* Skills Section para tablets */
+    .skills-container-cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 600px;
+    }
+
+    /* Projects Section para tablets */
+    .projects-container {
+        flex-wrap: wrap;
+        max-width: 600px;
+    }
+
+    /* Contact Section para tablets */
+    .contact-container {
+        flex-direction: column;
+        gap: 25px;
+        max-width: 700px;
+    }
+
+    .container-social-media {
+        flex-direction: row;
+        gap: 25px;
+    }
 }
 
 /* Reglas de CSS responsivo para dispositivos móviles */

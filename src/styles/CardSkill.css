@@ -38,6 +38,23 @@
     z-index: 2;
 }
 
+/* Media query para tablets */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .card-skill {
+        width: 140px;
+        height: 144px;
+    }
+    
+    .card-skill-content img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .card-skill-content h3 {
+        font-size: 14px;
+    }
+}
+
 /* Media query para dispositivos móviles */
 @media screen and (max-width: 768px) {
     .card-skill {
