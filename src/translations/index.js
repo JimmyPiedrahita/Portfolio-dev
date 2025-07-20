@@ -46,6 +46,9 @@ export const translations = {
       // Hero
       hello: 'Hola, soy',
 
+      // Tittle
+      tittleAbout: 'Sobre mi',
+
       // About
       aboutDescription: {
         part1: 'Me gusta aprender haciendo',
@@ -102,6 +105,9 @@ export const translations = {
 
         // Hero
         hello: 'Hello, I\'m',
+
+        // Tittle
+        tittleAbout: 'About me',
 
         // Contact me
         contactMe: 'Let\'s keep in contact',

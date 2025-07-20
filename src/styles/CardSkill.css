@@ -1,9 +1,8 @@
 .card-skill {
-    width: 160px;
-    height: 164px;
-    background-color: var(--transparent-primary);
-    border: 1px solid var(--transparent-secondary);
-    backdrop-filter: blur(10px);
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: 2px solid var(--text-primary);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -12,6 +11,7 @@
     transition: clip-path 0.25s cubic-bezier(.25,1.7,.45,.87), transform 0.25s cubic-bezier(.25,1.7,.45,.87);
     transform: scale(1);
     z-index: 1;
+    padding: 10px;
 }
 
 .card-skill-content {
@@ -29,8 +29,8 @@
 }
 
 .card-skill-content img {
-    width: 92px;
-    height: 92px;
+    width: 50px;
+    height: 50px;
 }
 
 .card-skill--hovered {
@@ -41,13 +41,12 @@
 /* Media query para tablets */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
     .card-skill {
-        width: 140px;
-        height: 144px;
+        padding: 12px;
     }
     
     .card-skill-content img {
-        width: 80px;
-        height: 80px;
+        width: 45px;
+        height: 45px;
     }
     
     .card-skill-content h3 {
@@ -58,13 +57,12 @@
 /* Media query para dispositivos móviles */
 @media screen and (max-width: 768px) {
     .card-skill {
-        width: 100px;
-        height: 100px;
+        padding: 10px;
     }
     
     .card-skill-content img {
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
     }
     
     .card-skill-content h3 {

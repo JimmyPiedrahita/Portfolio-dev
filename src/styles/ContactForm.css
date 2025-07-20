@@ -50,10 +50,10 @@
   font-family: 'Poppins', sans-serif;
   border-radius: 100px;
   padding: 5px 20px;
-  border: none;
+  border: 2px solid transparent;
   font-size: 15px;
   cursor: pointer;
-  background: transparent;
+  background: var(--button-bg);
   color: var(--text-primary);
   font-weight: 600;
   margin: 0 auto;
@@ -63,23 +63,11 @@
   gap: 8px;
   position: relative;
   overflow: hidden;
-  transition: color 0.3s ease;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-.contact-form-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--primary);
-  transition: transform 0.3s ease;
-  z-index: -1;
-}
-
-.contact-form-button:hover::before {
-  transform: translateX(100%);
+.contact-form-button:hover {
+  border-color: var(--text-primary);
 }
 
 .button-icon {

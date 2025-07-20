@@ -13,6 +13,7 @@
   --background-overlay: rgba(255, 255, 255, 0.85);
   --cursor-dot-color: #000000;
   --cursor-circle-color: #000000;
+  --button-bg: #C8D5D8;
   
   /* Colores del gradiente para el nombre (modo claro) */
   --gradient-color-1: #9F3B44;
@@ -37,6 +38,7 @@
   --background-overlay: rgba(34, 34, 34, 0.85);
   --cursor-dot-color: #ffffff;
   --cursor-circle-color: #ffffff;
+  --button-bg: #9F3B44;
   
   /* Colores del gradiente para el nombre (modo oscuro) - más brillantes para mejor visibilidad */
   --gradient-color-1: #ED4D58;

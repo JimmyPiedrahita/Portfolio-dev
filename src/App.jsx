@@ -79,7 +79,7 @@ function App() {
           <LaptopModel />
         </section>
         <section id='about' className="about-section" >
-          <h2 className="about-section-title">{t('about')}</h2>
+          <h2 className="about-section-title">{t('tittleAbout')}</h2>
           <p className="about-section-description">
             <span className="highlight-description">{t('aboutDescription.part1')}</span>
             <span>{t('aboutDescription.part2')}</span>
