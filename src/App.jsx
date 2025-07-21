@@ -45,7 +45,7 @@ function App() {
       technologies: ['Java', 'Firebase', 'Android Studio'],
       githubUrl: 'https://github.com/JimmyPiedrahita/UniScan',
       siteUrl: null, // Sin sitio web disponible
-      category: 'mobile',
+      category: 'mobile', 
     },
     {
       image: Work2,
@@ -80,7 +80,7 @@ function App() {
       description: t('projectDescriptions.sketchVibes'),
       technologies: ['PHP', 'MySql'],
       githubUrl: 'https://github.com/JimmyPiedrahita/SketchVibes',
-      siteUrl: null, // Sin sitio web disponible
+      siteUrl: 'https://co.pinterest.com/',
       category: 'web',
     },
     {
@@ -89,7 +89,7 @@ function App() {
       description: t('projectDescriptions.frutasticShoot'),
       technologies: ['C#', 'Unity'],
       githubUrl: 'https://github.com/JimmyPiedrahita/frutastic-shoot',
-      siteUrl: null, // Sin sitio web disponible
+      siteUrl: 'https://jimmypiedrahita.itch.io/war-of-orbs', // Sin sitio web disponible
       category: 'videogames',
     },
   ];

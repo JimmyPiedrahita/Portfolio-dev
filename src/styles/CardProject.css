@@ -1,6 +1,6 @@
 .card-project {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--card-bg);
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -8,8 +8,8 @@
 }
 
 .card-project:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
 }
 
 .card-project-image {
@@ -56,8 +56,8 @@
 
 .technology {
   font-size: 11px;
-  color: var(--text-tittle);
-  background-color: var(--transparent-secondary);
+  color: var(--text-primary);
+  background-color: var(--technology-bg);
   padding: 4px 8px;
   border-radius: 12px;
   white-space: nowrap;
@@ -67,7 +67,7 @@
   display: flex;
   gap: 8px;
   align-items: center;
-  min-height: 36px; /* Mantiene la altura mínima incluso sin botones */
+  min-height: 36px;
 }
 
 .project-btn {
@@ -77,69 +77,59 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  color: var(--text-tittle);
+  color: var(--text-primary);
   transition: all 0.2s ease;
   text-decoration: none;
+  background-color: var(--project-btn-bg);
 }
 
-.github-btn {
-  background-color: rgba(51, 51, 51, 0.8);
-}
-
-.github-btn:hover {
-  background-color: rgba(51, 51, 51, 1);
-  transform: scale(1.1);
-}
-
-.site-btn {
-  background-color: rgba(59, 130, 246, 0.8);
-}
-
+.github-btn:hover,
 .site-btn:hover {
-  background-color: rgba(59, 130, 246, 1);
   transform: scale(1.1);
 }
 
 /* Media query para tablets */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-    .card-project-image {
-        width: 140px;
-        height: 140px;
-    }
-    
-    .card-project-title {
-        font-size: 16px;
-    }
-    
-    .card-project-description {
-        font-size: 13px;
-    }
-    
-    .technology {
-        font-size: 10px;
-    }
+  .card-project-title {
+    font-size: 16px;
+
+  }
+
+  .card-project-description {
+    font-size: 13px;
+  }
+
+  .technology {
+    font-size: 10px;
+  }
 }
 
 /* Media query para dispositivos móviles */
 @media screen and (max-width: 768px) {
-    .card-project {
-        flex-direction: column;
-    }
-    
-    .card-project-image {
-        width: 100%;
-        height: 200px;
-    }
-    
-    .card-project-content {
-        padding: 12px;
-    }
-    
-    .card-project-title {
-        font-size: 16px;
-    }
-    
-    .card-project-description {
-        font-size: 13px;
-    }
+  .card-project {
+    flex-direction: column;
+  }
+
+  .card-project:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .card-project-image {
+    width: 100%;
+    height: 250px;
+    margin-top: 10px;
+  }
+
+  .card-project-content {
+    padding: 12px;
+  }
+
+  .card-project-title {
+    font-size: 16px;
+  }
+
+  .card-project-description {
+    font-size: 13px;
+  }
 }

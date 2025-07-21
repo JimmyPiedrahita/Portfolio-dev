@@ -19,12 +19,12 @@
 
 .contact-form-group input,
 .contact-form-group textarea {
-  border: 2px solid var(--transparent-primary);
+  border: 2px solid var(--text-primary);
   border-radius: 10px;
   padding: 10px;
   font-size: 15px;
   color: var(--text-primary);
-  background-color: var(--transparent-primary);
+  background-color: var(--card-bg);
   outline: none;
   transition: border-color 0.2s;
   resize: none;
@@ -61,7 +61,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease, color 0.3s ease;
 }

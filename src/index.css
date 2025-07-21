@@ -2,7 +2,7 @@
   /* Light theme (default) */
   --bg-primary: #ffffff;
   --placeholder: #676767;
-  --primary: #ffabb2;
+  --primary: #9F3B44;
   --text-primary: #606887;
   --text-secondary: #606887;
   --text-tertiary: #343849;
@@ -14,6 +14,10 @@
   --cursor-dot-color: #000000;
   --cursor-circle-color: #000000;
   --button-bg: #C8D5D8;
+  --technology-bg: rgba(0, 0, 0, 0.1);
+  --project-btn-bg: rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --card-bg: rgba(0, 0, 0, 0.1);
   
   /* Colores del gradiente para el nombre (modo claro) */
   --gradient-color-1: #9F3B44;
@@ -39,6 +43,10 @@
   --cursor-dot-color: #ffffff;
   --cursor-circle-color: #ffffff;
   --button-bg: #9F3B44;
+  --technology-bg: rgba(255, 255, 255, 0.1);
+  --project-btn-bg: rgba(255, 255, 255, 0.1);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --card-bg: rgba(0, 0, 0, 0.1);
   
   /* Colores del gradiente para el nombre (modo oscuro) - más brillantes para mejor visibilidad */
   --gradient-color-1: #ED4D58;
