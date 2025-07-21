@@ -32,15 +32,25 @@
 }
 
 .menu-toggle-btn {
-  background: none;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: none;
+  border-radius: 10px;
   color: var(--text-primary);
   font-size: 24px;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 .toggle-container {
@@ -87,20 +97,10 @@
   .menu-list {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
     opacity: 1;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
-    /* Aplicamos blur para mayor legibilidad */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    /* Color de fondo semitransparente para mejor contraste */
-    background-color: var(--background-overlay, rgba(255, 255, 255, 0.85));
   }
   
   .menu-list.show {
@@ -108,11 +108,9 @@
   }
   
   .menu-container.menu-open {
-    background-color: var(--background);
-    /* Aplicamos blur cuando el menú está abierto para mayor legibilidad */
+    flex-direction: column;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    /* Color de fondo semitransparente para la barra cuando el menú está abierto */
     background-color: var(--background-overlay, rgba(255, 255, 255, 0.85));
     opacity: 1;
   }
@@ -124,7 +122,6 @@
   }
 }
 
-/* Mantenemos el backdrop filter solo para pantallas más grandes */
 @media screen and (min-width: 769px) {
   .menu-container.fixed {
     backdrop-filter: blur(50px);

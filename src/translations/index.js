@@ -61,6 +61,16 @@ export const translations = {
         part8: ', tengo habilidades fuertes en ',
         part9: 'liderazgo y comunicación.',
         part10: ' Estoy en constante crecimiento personal y tecnico, me gusta que se valore las ideas frescas.'
+      },
+
+      // Project descriptions
+      projectDescriptions: {
+        uniScan: 'Aplicación para visualizar y gestionar horarios de salones por medio de códigos QR.',
+        reportApp: 'Aplicación para reportar y gestionar problemas en computadores de salas informáticas.',
+        filterProtector: 'Filtro protector de luz azul para telefonos android.',
+        paintChat: 'Red social para compartirse dibujos en tiempo real a modo de chat.',
+        sketchVibes: 'Plataforma web para exponer dibujos personales.',
+        frutasticShoot: 'Juego 2D para el aprender vocabulario sobre frutas por medio de audios.'
       }
     },
     en: {
@@ -124,6 +134,16 @@ export const translations = {
           part8: ', I have strong',
           part9: ' leadership and communication skills.',
           part10: ' I am constantly growing personally and technically, I like to value fresh ideas.'
+        },
+
+        // Project descriptions
+        projectDescriptions: {
+          uniScan: 'Application to view and manage classroom schedules using QR codes.',
+          reportApp: 'Application to report and manage issues on computers in computer labs.',
+          filterProtector: 'Blue light filter for Android phones.',
+          paintChat: 'Social network for sharing drawings in real time as a chat.',
+          sketchVibes: 'Web platform for showcasing personal drawings.',
+          frutasticShoot: '2D game for learning vocabulary about fruits through audio.'
         }
       }
   }

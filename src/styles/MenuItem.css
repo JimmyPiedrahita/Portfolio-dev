@@ -37,5 +37,27 @@
         text-align: center;
         padding: 10px 20px;
         margin: 5px 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    /* Punto al lado izquierdo del texto para móvil */
+    .btn-menu:hover::before,
+    .btn-menu.active::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #9F3B44;
+        display: block;
+        order: 1;
+    }
+    
+    .btn-menu:hover::after,
+    .btn-menu.active::after {
+        display: none;
     }
 }

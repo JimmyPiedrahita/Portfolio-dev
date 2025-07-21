@@ -25,9 +25,12 @@ import { MdDownload } from 'react-icons/md'
 import { FaFacebook, FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import CardProject from './components/CardProject'
-import Work1 from './assets/images/work1.webp'
-import Work2 from './assets/images/work2.webp'
-import Work3 from './assets/images/work3.webp'
+import Work1 from './assets/images/project1.webp'
+import Work2 from './assets/images/project2.webp'
+import Work3 from './assets/images/project3.webp'
+import Work4 from './assets/images/project4.webp'
+import Work5 from './assets/images/project5.webp'
+import Work6 from './assets/images/project6.webp'
 import { useState } from 'react'
 import ContactForm from './components/ContactForm'
 
@@ -37,24 +40,57 @@ function App() {
   const projects = [
     {
       image: Work1,
-      name: 'SkecthVibes',
-      technologies: ['PHP', 'MySql'],
-      githubUrl: 'https://github.com/JimmyPiedrahita/SketchVibes',
-      category: 'web',
+      name: 'UniScan',
+      description: t('projectDescriptions.uniScan'),
+      technologies: ['Java', 'Firebase', 'Android Studio'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/UniScan',
+      siteUrl: null, // Sin sitio web disponible
+      category: 'mobile',
     },
     {
       image: Work2,
-      name: 'Frutastic Shoot',
-      technologies: ['C#', 'Unity'],
-      githubUrl: 'https://github.com/JimmyPiedrahita/frutastic-shoot',
-      category: 'videogames',
+      name: 'ReportApp',
+      description: t('projectDescriptions.reportApp'),
+      technologies: ['Java', 'Firebase', 'Android Studio'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/ReportApp',
+      siteUrl: null, // Sin sitio web disponible
+      category: 'mobile',
     },
     {
       image: Work3,
-      name: 'ReportApp',
-      technologies: ['Java', 'Android Studio'],
-      githubUrl: 'https://github.com/JimmyPiedrahita/Report_App',
+      name: 'Filter Protector',
+      description: t('projectDescriptions.filterProtector'),
+      technologies: ['Kotlin', 'Android Studio'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/filtro-protector',
+      siteUrl: null, // Sin sitio web disponible
       category: 'mobile',
+    },
+    {
+      image: Work4,
+      name: 'PaintChat',
+      description: t('projectDescriptions.paintChat'),
+      technologies: ['Java', 'Firebase', 'Android Studio'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/PaintChat',
+      siteUrl: null, // Sin sitio web disponible
+      category: 'mobile',
+    },
+    {
+      image: Work5,
+      name: 'SketchVibes',
+      description: t('projectDescriptions.sketchVibes'),
+      technologies: ['PHP', 'MySql'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/SketchVibes',
+      siteUrl: null, // Sin sitio web disponible
+      category: 'web',
+    },
+    {
+      image: Work6,
+      name: 'Frutastic Shoot',
+      description: t('projectDescriptions.frutasticShoot'),
+      technologies: ['C#', 'Unity'],
+      githubUrl: 'https://github.com/JimmyPiedrahita/frutastic-shoot',
+      siteUrl: null, // Sin sitio web disponible
+      category: 'videogames',
     },
   ];
   // Estado para el filtro
@@ -151,8 +187,10 @@ function App() {
                 key={project.name}
                 image={project.image}
                 name={project.name}
+                description={project.description}
                 technologies={project.technologies}
                 githubUrl={project.githubUrl}
+                siteUrl={project.siteUrl}
               />
             ))}
           </div>

@@ -231,10 +231,8 @@
 .projects-container {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .projects-section-title {
@@ -356,7 +354,8 @@
 
     /* Projects Section para tablets */
     .projects-container {
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 14px;
         max-width: 600px;
     }
 
@@ -440,15 +439,50 @@
 
     .menu-projects-button {
         width: 100%;
-        text-align: center;
         padding: 10px 20px;
         margin: 5px 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .menu-projects-button:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-projects-button.active {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-projects-button:hover::before,
+    .menu-projects-button.active::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #9F3B44;
+        display: block;
+        order: 1;
+    }
+
+    .menu-projects-button:hover::after,
+    .menu-projects-button.active::after {
+        display: none;
+    }
+
+    .menu-projects-button span {
+        order: 2;
     }
 
     .projects-container {
         display: flex;
         flex-direction: column;
         width: 100%;
+        gap: 12px;
     }
 
     /* Contact Section */
