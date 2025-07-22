@@ -58,7 +58,7 @@ function App() {
     },
     {
       image: Work3,
-      name: 'Filter Protector',
+      name: 'Filtro Protector',
       description: t('projectDescriptions.filterProtector'),
       technologies: ['Kotlin', 'Android Studio'],
       githubUrl: 'https://github.com/JimmyPiedrahita/filtro-protector',
@@ -80,7 +80,7 @@ function App() {
       description: t('projectDescriptions.sketchVibes'),
       technologies: ['PHP', 'MySql'],
       githubUrl: 'https://github.com/JimmyPiedrahita/SketchVibes',
-      siteUrl: 'https://co.pinterest.com/',
+      siteUrl: 'https://practicas.me/',
       category: 'web',
     },
     {
@@ -89,7 +89,7 @@ function App() {
       description: t('projectDescriptions.frutasticShoot'),
       technologies: ['C#', 'Unity'],
       githubUrl: 'https://github.com/JimmyPiedrahita/frutastic-shoot',
-      siteUrl: 'https://jimmypiedrahita.itch.io/war-of-orbs', // Sin sitio web disponible
+      siteUrl: 'https://jimmypiedrahita.itch.io/frutastic-shoot',
       category: 'videogames',
     },
   ];
