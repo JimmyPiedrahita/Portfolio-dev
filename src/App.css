@@ -124,6 +124,7 @@
     padding: 5px 20px;
     text-decoration: none;
     font-size: 15px;
+    text-shadow: var(--text-shadow);
     cursor: pointer;
     font-weight: 600;
     display: flex;
@@ -140,6 +141,7 @@
 
 .button-icon {
     transition: color 0.3s ease;
+    filter: drop-shadow(var(--text-shadow));
 }
 
 /* Skills */

@@ -6,6 +6,12 @@
   justify-content: center;
   gap: 10px;
   color: var(--text-tertiary);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-placeholder {
+  width: 100%;
+  display: block;
 }
 
 .menu-container.fixed {
@@ -13,6 +19,20 @@
   top: 0;
   left: 0;
   z-index: 1000;
+  transform: translateY(0);
+  opacity: 1;
+  animation: slideInFromTop 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-10px);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .menu-list {

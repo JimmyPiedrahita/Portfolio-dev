@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import '../styles/Menu.css'
 import MenuItem from './MenuItem'
 import ThemeToggle from './ThemeToggle'
@@ -19,10 +19,28 @@ const Menu = () => {
   const [isFixed, setIsFixed] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
+  const [menuHeight, setMenuHeight] = useState(0)
+  const menuRef = useRef(null)
+
+  useEffect(() => {
+    // Medir la altura del menú cuando se monta el componente
+    const updateMenuHeight = () => {
+      if (menuRef.current) {
+        setMenuHeight(menuRef.current.offsetHeight)
+      }
+    }
+    
+    updateMenuHeight()
+    
+    // Actualizar la altura cuando cambie el tamaño de la ventana
+    window.addEventListener('resize', updateMenuHeight)
+    return () => window.removeEventListener('resize', updateMenuHeight)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
-      if (menuOpen || window.scrollY > 0) {
+      const scrollThreshold = 10; // Umbral para hacer la transición más suave
+      if (menuOpen || window.scrollY > scrollThreshold) {
         setIsFixed(true)
       } else {
         setIsFixed(false)
@@ -68,35 +86,40 @@ const Menu = () => {
   }
 
   return (
-    <nav className={`menu-container${isFixed ? ' fixed' : ''}${menuOpen ? ' menu-open' : ''}`}>
-      <div className="menu-mobile-header">
-        <button 
-          className="menu-toggle-btn" 
-          onClick={toggleMenu} 
-          aria-label={menuOpen ? t('closeMenu') : t('openMenu')} 
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
-      </div>
-      <ul className={`menu-list${menuOpen ? ' show' : ''}`}>
-        {sections.map(section => (
-          <MenuItem
-            key={section.id}
-            label={t(section.labelKey)}
-            to={`#${section.id}`}
-            active={activeSection === section.id}
-            onClick={closeMenu}
-          />
-        ))}
-        <li className="toggle-list-item">
-          <div className="toggle-container">
-            <LanguageToggle />
-            <ThemeToggle />
-          </div>
-        </li>
-      </ul>
-    </nav>
+    <>
+      {/* Placeholder para mantener el espacio cuando el menú esté fixed */}
+      {isFixed && <div className="menu-placeholder" style={{ height: `${menuHeight}px` }} />}
+      
+      <nav ref={menuRef} className={`menu-container${isFixed ? ' fixed' : ''}${menuOpen ? ' menu-open' : ''}`}>
+        <div className="menu-mobile-header">
+          <button 
+            className="menu-toggle-btn" 
+            onClick={toggleMenu} 
+            aria-label={menuOpen ? t('closeMenu') : t('openMenu')} 
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+        <ul className={`menu-list${menuOpen ? ' show' : ''}`}>
+          {sections.map(section => (
+            <MenuItem
+              key={section.id}
+              label={t(section.labelKey)}
+              to={`#${section.id}`}
+              active={activeSection === section.id}
+              onClick={closeMenu}
+            />
+          ))}
+          <li className="toggle-list-item">
+            <div className="toggle-container">
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </>
   )
 }
 
