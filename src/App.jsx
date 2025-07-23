@@ -36,7 +36,8 @@ import ContactForm from './components/ContactForm'
 
 function App() {
   const { t } = useTranslation()
-  // Definir proyectos con categoría
+
+  // Defined projects with categories
   const projects = [
     {
       image: Work1,
@@ -44,7 +45,7 @@ function App() {
       description: t('projectDescriptions.uniScan'),
       technologies: ['Java', 'Firebase', 'Android Studio'],
       githubUrl: 'https://github.com/JimmyPiedrahita/UniScan',
-      siteUrl: null, // Sin sitio web disponible
+      siteUrl: null,
       category: 'mobile', 
     },
     {
@@ -53,7 +54,7 @@ function App() {
       description: t('projectDescriptions.reportApp'),
       technologies: ['Java', 'Firebase', 'Android Studio'],
       githubUrl: 'https://github.com/JimmyPiedrahita/ReportApp',
-      siteUrl: null, // Sin sitio web disponible
+      siteUrl: null,
       category: 'mobile',
     },
     {
@@ -62,7 +63,7 @@ function App() {
       description: t('projectDescriptions.filterProtector'),
       technologies: ['Kotlin', 'Android Studio'],
       githubUrl: 'https://github.com/JimmyPiedrahita/filtro-protector',
-      siteUrl: null, // Sin sitio web disponible
+      siteUrl: null,
       category: 'mobile',
     },
     {
@@ -71,7 +72,7 @@ function App() {
       description: t('projectDescriptions.paintChat'),
       technologies: ['Java', 'Firebase', 'Android Studio'],
       githubUrl: 'https://github.com/JimmyPiedrahita/PaintChat',
-      siteUrl: null, // Sin sitio web disponible
+      siteUrl: null,
       category: 'mobile',
     },
     {
@@ -93,9 +94,7 @@ function App() {
       category: 'videogames',
     },
   ];
-  // Estado para el filtro
   const [selectedCategory, setSelectedCategory] = useState('all');
-  // Filtrar proyectos
   const filteredProjects = selectedCategory === 'all'
     ? projects
     : projects.filter(p => p.category === selectedCategory);

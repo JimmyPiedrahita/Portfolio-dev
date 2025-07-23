@@ -8,11 +8,6 @@
   transition: all 0.3s ease;
 }
 
-/* Asegurar que el canvas sea responsive */
-.laptop-model-container canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
 
 /* Responsive design */
 @media (max-width: 1024px) and (min-width: 769px) {

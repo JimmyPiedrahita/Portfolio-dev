@@ -12,12 +12,12 @@ export const useLanguage = () => {
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(() => {
-    // Obtener el idioma guardado en localStorage o usar español por defecto
+    // Obtain the saved language from localStorage or default to Spanish
     const savedLanguage = localStorage.getItem('language')
     if (savedLanguage && ['es', 'en'].includes(savedLanguage)) {
       return savedLanguage
     }
-    // Detectar idioma del navegador
+    // Detect the browser's language
     const browserLanguage = navigator.language.split('-')[0]
     return ['es', 'en'].includes(browserLanguage) ? browserLanguage : 'es'
   })
@@ -33,10 +33,10 @@ export const LanguageProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    // Guardar el idioma en localStorage
+    // Save the language to localStorage
     localStorage.setItem('language', language)
-    
-    // Aplicar el idioma al documento
+
+    // Apply the language to the document
     document.documentElement.setAttribute('data-language', language)
   }, [language])
 

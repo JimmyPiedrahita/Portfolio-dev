@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import '../styles/ContactForm.css'
 import { useTranslation } from '../translations'
 import { useForm, ValidationError } from '@formspree/react'
@@ -9,11 +9,11 @@ function ContactForm() {
   const [state, handleSubmit] = useForm("xdobvzry")
   const formRef = useRef(null)
 
-  // Efecto para manejar el éxito del formulario
+  // Effect to handle form submission success
   useEffect(() => {
     if (state.succeeded && formRef.current) {
       formRef.current.reset()
-      alert(t('formSuccess') || '¡Formulario enviado correctamente!')
+      alert(t('formSuccess'))
     }
   }, [state.succeeded, t])
 

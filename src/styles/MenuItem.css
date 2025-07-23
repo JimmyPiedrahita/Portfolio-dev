@@ -26,11 +26,11 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: #9F3B44;
+    background-color: var(--primary);
     display: block;
 }
 
-/* Media query para dispositivos móviles */
+/* Media query for mobile devices */
 @media screen and (max-width: 768px) {
     .btn-menu {
         width: 100%;
@@ -43,15 +43,15 @@
         justify-content: center;
         gap: 8px;
     }
-    
-    /* Punto al lado izquierdo del texto para móvil */
+
+    /* Dot on the left side of the text for mobile */
     .btn-menu:hover::before,
     .btn-menu.active::before {
         content: '';
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background-color: #9F3B44;
+        background-color: var(--primary);
         display: block;
         order: 1;
     }

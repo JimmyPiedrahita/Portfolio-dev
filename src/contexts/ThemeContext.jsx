@@ -12,12 +12,12 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Obtener el tema guardado en localStorage o usar el tema del sistema
+    // Obtain the saved theme from localStorage or use system preference
     const savedTheme = localStorage.getItem('theme')
     if (savedTheme) {
       return savedTheme === 'dark'
     }
-    // Detectar preferencia del sistema
+    // Detect the system preference
     return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
 
@@ -29,12 +29,8 @@ export const ThemeProvider = ({ children }) => {
     setIsDarkMode(theme === 'dark')
   }
 
-  // Aplicar clase no-transition durante la carga inicial
   useEffect(() => {
-    // Agregar clase para prevenir transiciones durante la carga inicial
     document.documentElement.classList.add('no-transition');
-    
-    // Quitar la clase después de un momento para permitir transiciones futuras
     const timeoutId = setTimeout(() => {
       document.documentElement.classList.remove('no-transition');
     }, 100);
@@ -43,10 +39,10 @@ export const ThemeProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // Guardar el tema en localStorage
+    // Save the theme to localStorage
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light')
-    
-    // Aplicar el tema al documento
+
+    // Apply the theme to the document
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light')
   }, [isDarkMode])
 

@@ -19,6 +19,7 @@
 
 .contact-form-group input,
 .contact-form-group textarea {
+  font-family: inherit;
   border: 2px solid var(--text-primary);
   border-radius: 10px;
   padding: 10px;
@@ -28,7 +29,6 @@
   outline: none;
   transition: border-color 0.2s;
   resize: none;
-  font-family: 'Poppins', sans-serif;
 }
 
 .contact-form-group input::placeholder,
@@ -47,7 +47,7 @@
 }
 
 .contact-form-button {
-  font-family: 'Poppins', sans-serif;
+  font-family: inherit;
   border-radius: 100px;
   padding: 5px 20px;
   border: 2px solid transparent;
@@ -73,7 +73,7 @@
   transition: color 0.3s ease;
 }
 
-/* Media query para tablets */
+/* Media query for tablets */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .contact-form {
     width: 100%;
@@ -90,7 +90,7 @@
   }
 }
 
-/* Media query para dispositivos móviles */
+/* Media query for mobile devices */
 @media screen and (max-width: 768px) {
   .contact-form {
     width: 100%;

@@ -1,7 +1,7 @@
 import { useLanguage } from '../hooks/useLanguage'
 export const translations = {
     es: {
-      // Phases
+      // Frases
       phases: {
         phase1: 'Desarrollador de software',
         phase2: 'Arquitecto de soluciones',
@@ -40,16 +40,19 @@ export const translations = {
       enterEmail: 'Ingresa tu correo electrónico',
       enterMessage: 'Ingresa tu mensaje',
 
-      // Contact me
-      contactMe: 'Mantengamonos en contacto',
+      // Contactame
+      contactMe: 'Mantengámonos en contacto',
 
-      // Hero
+      // Saludo
       hello: 'Hola, soy',
 
-      // Tittle
+      // Titulo
       tittleAbout: 'Sobre mi',
 
-      // About
+      // Efecto de éxito del formulario
+      formSuccess: '¡Formulario enviado correctamente!',
+
+      // Sobre mi
       aboutDescription: {
         part1: 'Me gusta aprender haciendo',
         part2: ', suelo meterme en retos que me obligan a salir de lo básico.',
@@ -63,7 +66,7 @@ export const translations = {
         part10: ' Estoy en constante crecimiento personal y tecnico, me gusta que se valore las ideas frescas.'
       },
 
-      // Project descriptions
+      // Descripciones de proyectos
       projectDescriptions: {
         uniScan: 'Aplicación para visualizar y gestionar horarios de salones por medio de códigos QR.',
         reportApp: 'Aplicación para reportar y gestionar problemas en computadores de salas informáticas.',
@@ -99,11 +102,11 @@ export const translations = {
         openMenu: 'Open menu',
         closeMenu: 'Close menu',
         
-        // Temas
+        // Themes
         lightMode: 'Light Mode',
         darkMode: 'Dark Mode',
         
-        // Formularios
+        // Forms
         name: 'Name',
         email: 'Email',
         message: 'Message',
@@ -118,6 +121,9 @@ export const translations = {
 
         // Tittle
         tittleAbout: 'About me',
+
+        // Form success effect
+        formSuccess: 'Form submitted successfully!',
 
         // Contact me
         contactMe: 'Let\'s keep in contact',
@@ -148,9 +154,8 @@ export const translations = {
       }
   }
   
-  // Función helper para obtener traducciones
+  // Helper function to get translations
   export const t = (key, language = 'es', params = {}) => {
-    // Soporte para claves anidadas usando notación de puntos
     const keys = key.split('.')
     let translation = translations[language]
     for (const k of keys) {
@@ -158,16 +163,14 @@ export const translations = {
       if (translation === undefined) return key
     }
     if (typeof translation !== 'string') return key
-    // Reemplazar parámetros en la traducción
     return translation.replace(/\{(\w+)\}/g, (match, param) => {
       return params[param] || match
     })
   }
-  
-  // Hook personalizado para traducciones
+
+  // Hook personalized for translations
   export const useTranslation = () => {
     const { language } = useLanguage()
-    
     return {
       t: (key, params = {}) => t(key, language, params),
       language

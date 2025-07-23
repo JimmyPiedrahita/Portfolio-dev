@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '../styles/CardSkill.css'
 
 function CardSkill({ title, icon }) {

@@ -12,12 +12,10 @@ function TypeWriter({ phrases, typingSpeed = 150, erasingSpeed = 50, delayAfterT
     if (isTyping) {
       // Typing mode
       if (currentText.length < phrases[currentIndex].length) {
-        // Continue typing the current phrase
         timeout = setTimeout(() => {
           setCurrentText(phrases[currentIndex].substring(0, currentText.length + 1));
         }, typingSpeed);
       } else {
-        // Finished typing, wait before erasing
         timeout = setTimeout(() => {
           setIsTyping(false);
         }, delayAfterTyping);
@@ -25,12 +23,10 @@ function TypeWriter({ phrases, typingSpeed = 150, erasingSpeed = 50, delayAfterT
     } else {
       // Erasing mode
       if (currentText.length > 0) {
-        // Continue erasing
         timeout = setTimeout(() => {
           setCurrentText(currentText.substring(0, currentText.length - 1));
         }, erasingSpeed);
       } else {
-        // Finished erasing, move to next phrase and start typing again
         timeout = setTimeout(() => {
           setIsTyping(true);
           setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import '../styles/CursorJellyBlob.css';
 
@@ -12,9 +12,9 @@ export default function CursorJellyBlob() {
   const rafId = useRef();
   const isTouchDevice = 'ontouchstart' in window;
 
-  // Animación principal
+  // Animation following the cursor with a delay
   const animate = () => {
-    // El punto sigue directamente al cursor (sin suavizado)
+    // The dot follows the cursor directly
     if (cursorDot.current) {
       gsap.set(cursorDot.current, {
         x: mouse.current.x,
@@ -24,10 +24,10 @@ export default function CursorJellyBlob() {
       });
     }
 
-    // El círculo sigue al cursor con suavizado (pero más rápido)
+    // The circle follows the cursor
     delayedMouse.current = {
-      x: lerp(delayedMouse.current.x, mouse.current.x, 0.25), // Menos suave para seguir más rápido
-      y: lerp(delayedMouse.current.y, mouse.current.y, 0.25), // Menos suave para seguir más rápido
+      x: lerp(delayedMouse.current.x, mouse.current.x, 0.25),
+      y: lerp(delayedMouse.current.y, mouse.current.y, 0.25),
     };
 
     if (cursorCircle.current) {
@@ -36,7 +36,7 @@ export default function CursorJellyBlob() {
         y: delayedMouse.current.y,
         xPercent: -50,
         yPercent: -50,
-        duration: 0.15, // Duración más corta para respuesta más rápida
+        duration: 0.15,
         ease: 'expo.out',
         overwrite: 'position'
       });
@@ -45,17 +45,15 @@ export default function CursorJellyBlob() {
     rafId.current = window.requestAnimationFrame(animate);
   };
 
-  // Función para animar el click
+  // Function to animate the click
   const handleClick = () => {
     if (!cursorCircle.current) return;
     
-    // Animación de "click" - Primero se encoge
     gsap.to(cursorCircle.current, {
       scale: 0.8,
       duration: 0.15,
       ease: 'power2.out',
       onComplete: () => {
-        // Luego vuelve a su tamaño normal con efecto elástico
         gsap.to(cursorCircle.current, {
           scale: 1,
           duration: 0.3,
@@ -80,17 +78,16 @@ export default function CursorJellyBlob() {
       window.removeEventListener('click', handleClick);
       window.cancelAnimationFrame(rafId.current);
     };
-    // eslint-disable-next-line
   }, []);
 
   if (isTouchDevice) return null;
 
   return (
     <>
-      {/* Punto central que sigue exactamente al cursor */}
+      {/* The central dot follows the cursor exactly */}
       <div ref={cursorDot} className="cursor-dot"></div>
-      
-      {/* Círculo exterior que sigue al cursor con suavizado */}
+
+      {/* The outer circle follows the cursor */}
       <div ref={cursorCircle} className="cursor-circle"></div>
     </>
   );

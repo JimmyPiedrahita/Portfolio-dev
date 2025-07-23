@@ -46,8 +46,7 @@
 
 .hero-section-content h1 {
     font-size: 80px;
-    font-weight: 600; /* Un poco más de peso para resaltar el efecto */
-    /* Aplicamos el gradiente al nombre */
+    font-weight: 600;
     background-image: linear-gradient(to right, 
         var(--gradient-color-1), 
         var(--gradient-color-2), 
@@ -60,15 +59,13 @@
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    /* Sombra sutil para dar profundidad */
     text-shadow: 3px 3px 10px rgba(150, 150, 150, 0.15);
-    /* Animación suave del gradiente */
     animation: gradient 6s ease infinite;
     transition: all 0.4s ease;
-    letter-spacing: 0.5px; /* Mejora sutilmente la legibilidad */
+    letter-spacing: 0.5px;
 }
 
-/* Animación del gradiente */
+/* Animation of the gradient */
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -167,7 +164,7 @@
 .skills-container-cards {
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg);
     padding: 20px;
     border-radius: 15px;
     gap: 10px;
@@ -245,6 +242,7 @@
 }
 
 /* Contact */
+
 .contact-section {
     display: flex;
     flex-direction: column;
@@ -288,7 +286,7 @@
     color: var(--primary);
 }
 
-/* Reglas para pantallas pequeñas de laptop */
+/* Media queries for small laptop screens */
 @media screen and (max-width: 1200px) and (min-width: 1025px) {
     .main-container {
         width: 85%;
@@ -305,15 +303,15 @@
     }
 }
 
-/* Reglas de CSS responsivo para tablets */
+/* Media queries for tablets */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
+    
     .main-container {
         width: 90%;
         padding-top: 80px;
         padding-bottom: 100px;
     }
 
-    /* Hero Section para tablets */
     .hero-section {
         flex-direction: column;
         gap: 30px;
@@ -338,34 +336,30 @@
         letter-spacing: 2.5px;
     }
 
-    /* About Section para tablets */
     .about-section-description {
         text-align: center;
         font-size: 14px;
         max-width: 600px;
     }
 
-    /* Skills Section para tablets */
     .skills-container-cards {
         justify-content: center;
         gap: 10px;
         max-width: none;
     }
 
-    /* Projects Section para tablets */
     .projects-container {
         flex-direction: column;
         gap: 14px;
         width: 100%;
     }
 
-    /* Contact Section para tablets */
     .contact-container {
         width: 100%;
     }
 }
 
-/* Reglas de CSS responsivo para dispositivos móviles */
+/* Media queries for mobile devices */
 @media screen and (max-width: 768px) {
     .main-container {
         width: 95%;
@@ -373,27 +367,23 @@
         padding-bottom: 50px;
     }
 
-    /* Hero Section */
     .hero-section {
         flex-direction: column;
         gap: 20px;
     }
     
-    /* Invertir el orden de los elementos en móvil: modelo 3D arriba, contenido abajo */
     .hero-section-content {
         align-items: center;
         text-align: center;
-        order: 2; /* Poner el contenido abajo */
+        order: 2;
     }
     
-    /* Poner el modelo 3D arriba */
     .laptop-model-container {
         order: 1;
     }
 
     .hero-section-content h1 {
         font-size: 50px;
-        /* Aseguramos que el gradiente se vea bien en dispositivos móviles */
         background-size: 300% auto;
         animation: gradient 8s ease infinite;
     }
@@ -403,7 +393,6 @@
         letter-spacing: 2px;
     }
 
-    /* About Section */
     .about-section-title,
     .skills-section-title,
     .projects-section-title,
@@ -416,13 +405,11 @@
         font-size: 14px;
     }
 
-    /* Skills Section */
     .skills-container-cards {
         justify-content: center;
         gap: 10px;
     }
 
-    /* Projects Section */
     .menu-projects {
         flex-direction: column;
         align-items: stretch;
@@ -434,7 +421,7 @@
         width: 100%;
         padding: 10px 20px;
         margin: 5px 0;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--card-bg);
         border-radius: 10px;
         position: relative;
         display: flex;
@@ -444,11 +431,11 @@
     }
 
     .menu-projects-button:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--card-bg-hover);
     }
 
     .menu-projects-button.active {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: var(--card-bg-active);
     }
 
     .menu-projects-button:hover::before,
@@ -457,7 +444,7 @@
         width: 5px;
         height: 5px;
         border-radius: 50%;
-        background-color: #9F3B44;
+        background-color: var(--primary);
         display: block;
         order: 1;
     }
@@ -477,8 +464,6 @@
         width: 100%;
         gap: 12px;
     }
-
-    /* Contact Section */
 
     .contact-container {
         flex-direction: column;

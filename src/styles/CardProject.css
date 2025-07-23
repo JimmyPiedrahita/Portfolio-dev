@@ -88,7 +88,7 @@
   transform: scale(1.1);
 }
 
-/* Media query para tablets */
+/* Media query for tablets */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .card-project-title {
     font-size: 16px;
@@ -104,7 +104,7 @@
   }
 }
 
-/* Media query para dispositivos móviles */
+/* Media query for mobile devices */
 @media screen and (max-width: 768px) {
   .card-project {
     flex-direction: column;

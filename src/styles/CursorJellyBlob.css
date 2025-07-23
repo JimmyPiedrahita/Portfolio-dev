@@ -9,7 +9,6 @@
   transform-origin: center;
 }
 
-/* Punto central del cursor */
 .cursor-dot {
   width: 5px;
   height: 5px;
@@ -21,7 +20,6 @@
   mix-blend-mode: normal;
 }
 
-/* Círculo exterior alrededor del cursor */
 .cursor-circle {
   width: 30px;
   height: 30px;

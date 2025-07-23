@@ -1,10 +1,9 @@
-import React from 'react'
 import '../styles/MenuItem.css'
 
 function Button({ label, to, active, onClick }) {
   const handleClick = (e) => {
     e.preventDefault();
-    if (to === '#home') {
+    if (to === '#home' ) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       const id = to.replace('#', '');
@@ -16,7 +15,7 @@ function Button({ label, to, active, onClick }) {
         window.scrollTo({ top: middle, behavior: 'smooth' });
       }
     }
-    // Cerrar el menú si hay una función onClick
+    // Close the menu if there's an onClick function
     if (onClick) onClick();
   }
   return (

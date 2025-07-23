@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import '../styles/Menu.css'
 import MenuItem from './MenuItem'
 import ThemeToggle from './ThemeToggle'
@@ -19,12 +19,9 @@ const Menu = () => {
   const [isFixed, setIsFixed] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
-  const observerRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
-      // Si el menú está abierto en móvil, mantener isFixed en true
-      // para evitar que desaparezca cuando se hace scroll al principio
       if (menuOpen || window.scrollY > 0) {
         setIsFixed(true)
       } else {

@@ -18,8 +18,6 @@
   --project-btn-bg: rgba(0, 0, 0, 0.1);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.2);
   --card-bg: rgba(0, 0, 0, 0.1);
-  
-  /* Colores del gradiente para el nombre (modo claro) */
   --gradient-color-1: #9F3B44;
   --gradient-color-2: #58a172;
   --gradient-color-3: #ac991f;
@@ -47,8 +45,6 @@
   --project-btn-bg: rgba(255, 255, 255, 0.1);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.2);
   --card-bg: rgba(0, 0, 0, 0.1);
-  
-  /* Colores del gradiente para el nombre (modo oscuro) - más brillantes para mejor visibilidad */
   --gradient-color-1: #ED4D58;
   --gradient-color-2: #93C6E7;
   --gradient-color-3: #B5EAD7;
@@ -56,7 +52,6 @@
   --gradient-color-5: #ED4D58;
 }
 
-/* Evitar transiciones durante la carga inicial */
 .no-transition,
 .no-transition * {
   transition: none !important;
@@ -73,8 +68,6 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
-  
-  /* Background with noise effect */
   position: relative;
   overflow-x: hidden;
 }

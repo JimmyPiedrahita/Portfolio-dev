@@ -7,7 +7,7 @@ function Laptop({ ...props }) {
   const { scene } = useGLTF('/models/laptop.glb')
   const meshRef = useRef()
   
-  // Animación de rotación suave
+  // Animation loop to rotate the laptop model
   useFrame(( _, delta) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += delta * 0.2
@@ -29,7 +29,6 @@ function LaptopModel() {
   const controlsRef = useRef()
 
   useEffect(() => {
-    // Configurar damping para controles más suaves
     if (controlsRef.current) {
       controlsRef.current.enableDamping = true
       controlsRef.current.dampingFactor = 0.1
@@ -85,7 +84,7 @@ function LaptopModel() {
   )
 }
 
-// Precargar el modelo
+// Preload the model
 useGLTF.preload('/models/laptop.glb')
 
 export default LaptopModel
