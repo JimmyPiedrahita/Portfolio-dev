@@ -79,9 +79,9 @@ function App() {
       image: Work5,
       name: 'SketchVibes',
       description: t('projectDescriptions.sketchVibes'),
-      technologies: ['PHP', 'MySql'],
+      technologies: ['PHP', 'MySql', 'bootstrap'],
       githubUrl: 'https://github.com/JimmyPiedrahita/SketchVibes',
-      siteUrl: 'https://practicas.me/',
+      siteUrl: 'https://practicas.me/SketchVibes/public/index.php',
       category: 'web',
     },
     {
