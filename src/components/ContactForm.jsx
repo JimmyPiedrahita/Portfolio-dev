@@ -2,20 +2,36 @@ import { useRef, useEffect } from 'react'
 import '../styles/ContactForm.css'
 import { useTranslation } from '../translations'
 import { useForm, ValidationError } from '@formspree/react'
-import { IoSend } from 'react-icons/io5'
+import { IoSend, IoCheckmarkCircle, IoCloseCircle } from 'react-icons/io5'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 
 function ContactForm() {
   const { t } = useTranslation()
-  const [state, handleSubmit] = useForm("xdobvzry")
+  const [state, handleSubmit, reset] = useForm("xdobvzry")
   const formRef = useRef(null)
 
   // Effect to handle form submission success
   useEffect(() => {
-    if (state.succeeded && formRef.current) {
-      formRef.current.reset()
-      alert(t('formSuccess'))
+    if (state.succeeded) {
+      if (formRef.current) {
+        formRef.current.reset()
+      }
+      const timer = setTimeout(() => {
+        reset()
+      }, 3000)
+      return () => clearTimeout(timer)
     }
-  }, [state.succeeded, t])
+  }, [state.succeeded, reset])
+
+  // Effect to handle form submission error
+  useEffect(() => {
+    if (state.errors?.length > 0) {
+      const timer = setTimeout(() => {
+        reset()
+      }, 3000)
+      return () => clearTimeout(timer)
+    }
+  }, [state.errors, reset])
 
   const onSubmit = async (e) => {
     await handleSubmit(e)
@@ -37,8 +53,28 @@ function ContactForm() {
         <textarea id="message" name="message" placeholder={t('enterMessage')} required />
         <ValidationError prefix={t('message')} field="message" errors={state.errors} />
       </div>
-      <button className="contact-form-button" type="submit" disabled={state.submitting}>
-        <IoSend className="button-icon" /> {t('submit')}
+      <button 
+        className={`contact-form-button ${state.succeeded ? 'success' : ''} ${state.errors?.length > 0 ? 'error' : ''}`} 
+        type="submit" 
+        disabled={state.submitting}
+      >
+        {state.submitting ? (
+          <>
+            <AiOutlineLoading3Quarters className="button-icon spin" /> {t('sending')}
+          </>
+        ) : state.succeeded ? (
+          <>
+            <IoCheckmarkCircle className="button-icon" /> {t('sent')}
+          </>
+        ) : state.errors?.length > 0 ? (
+          <>
+            <IoCloseCircle className="button-icon" /> {t('error')}
+          </>
+        ) : (
+          <>
+            <IoSend className="button-icon" /> {t('submit')}
+          </>
+        )}
       </button>
     </form>
   )

@@ -76,6 +76,25 @@
   filter: drop-shadow(var(--text-shadow));
 }
 
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.contact-form-button.success {
+  border-color: #4caf50;
+  color: #4caf50;
+}
+
+.contact-form-button.error {
+  border-color: #f44336;
+  color: #f44336;
+}
+
 /* Media query for tablets */
 @media screen and (max-width: 1024px) and (min-width: 769px) {
   .contact-form {

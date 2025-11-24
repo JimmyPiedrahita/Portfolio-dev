@@ -17,6 +17,9 @@ export const translations = {
       
       // Botones
       submit: 'Enviar',
+      sending: 'Enviando...',
+      sent: 'Enviado',
+      error: 'Error',
       download: 'Descargar CV',
       language: 'ES',
       all: 'Todos',
@@ -93,6 +96,9 @@ export const translations = {
         
         // Botones
         submit: 'Submit',
+        sending: 'Sending...',
+        sent: 'Sent',
+        error: 'Error',
         download: 'Download CV',
         language: 'EN',
         all: 'All',
