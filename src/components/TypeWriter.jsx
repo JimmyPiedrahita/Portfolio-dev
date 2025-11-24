@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 
 // TypeWriter component that simulates typing and erasing text
 function TypeWriter({ phrases, typingSpeed = 150, erasingSpeed = 50, delayAfterTyping = 2000, delayBeforeErasing = 1000 }) {
@@ -40,4 +40,4 @@ function TypeWriter({ phrases, typingSpeed = 150, erasingSpeed = 50, delayAfterT
   return <span className="typewriter">{currentText}<span className="cursor">|</span></span>;
 }
 
-export default TypeWriter;
+export default memo(TypeWriter);

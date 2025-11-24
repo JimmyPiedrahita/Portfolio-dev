@@ -1,4 +1,4 @@
-import { useRef, useEffect, Suspense } from 'react'
+import { useRef, useEffect, Suspense, memo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, useGLTF, OrthographicCamera } from '@react-three/drei'
 import '../styles/LaptopModel.css'
@@ -41,6 +41,7 @@ function LaptopModel() {
       style={{ width: '100%', height: '400px' }}
     >
       <Canvas
+        dpr={[1, 2]}
         style={{ 
           background: 'transparent'
         }}
@@ -87,4 +88,4 @@ function LaptopModel() {
 // Preload the model
 useGLTF.preload('/models/laptop.glb')
 
-export default LaptopModel
+export default memo(LaptopModel)

@@ -1,6 +1,5 @@
 import './App.css'
 import Menu from './components/Menu'
-import LaptopModel from './components/LaptopModel'
 import { useTranslation } from './translations'
 import CursorJellyBlob from './components/CursorJellyBlob'
 import CardSkill from './components/CardSkill'
@@ -31,14 +30,16 @@ import Work3 from './assets/images/project3.webp'
 import Work4 from './assets/images/project4.webp'
 import Work5 from './assets/images/project5.webp'
 import Work6 from './assets/images/project6.webp'
-import { useState } from 'react'
+import { useState, useMemo, lazy, Suspense } from 'react'
 import ContactForm from './components/ContactForm'
+
+const LaptopModel = lazy(() => import('./components/LaptopModel'))
 
 function App() {
   const { t } = useTranslation()
 
   // Defined projects with categories
-  const projects = [
+  const projects = useMemo(() => [
     {
       image: Work1,
       name: 'UniScan',
@@ -93,11 +94,14 @@ function App() {
       siteUrl: 'https://jimmypiedrahita.itch.io/frutastic-shoot',
       category: 'videogames',
     },
-  ];
+  ], [t]);
+
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const filteredProjects = selectedCategory === 'all'
+  
+  const filteredProjects = useMemo(() => selectedCategory === 'all'
     ? projects
-    : projects.filter(p => p.category === selectedCategory);
+    : projects.filter(p => p.category === selectedCategory), [selectedCategory, projects]);
+
   return (
     <>
       <CursorJellyBlob />
@@ -109,9 +113,11 @@ function App() {
               <p>{t('hello')}</p>
             </div>
             <h1>Jimmy Piedrahita</h1>
-            <h2><TypeWriter phrases={[t('phases.phase1'), t('phases.phase2'), t('phases.phase3')]} /></h2>
+            <h2><TypeWriter phrases={useMemo(() => [t('phases.phase1'), t('phases.phase2'), t('phases.phase3')], [t])} /></h2>
           </div>
-          <LaptopModel />
+          <Suspense fallback={<div style={{ height: '400px' }}></div>}>
+            <LaptopModel />
+          </Suspense>
         </section>
         <section id='about' className="about-section" >
           <h2 className="about-section-title">{t('tittleAbout')}</h2>

@@ -1,10 +1,10 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, memo } from 'react';
 import gsap from 'gsap';
 import '../styles/CursorJellyBlob.css';
 
 const lerp = (x, y, a) => x * (1 - a) + y * a;
 
-export default function CursorJellyBlob() {
+function CursorJellyBlob() {
   const mouse = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
   const delayedMouse = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
   const cursorDot = useRef(null);
@@ -12,34 +12,29 @@ export default function CursorJellyBlob() {
   const rafId = useRef();
   const isTouchDevice = 'ontouchstart' in window;
 
+  // Refs for quickSetters
+  const xSetDot = useRef(null);
+  const ySetDot = useRef(null);
+  const xSetCircle = useRef(null);
+  const ySetCircle = useRef(null);
+
   // Animation following the cursor with a delay
   const animate = () => {
     // The dot follows the cursor directly
-    if (cursorDot.current) {
-      gsap.set(cursorDot.current, {
-        x: mouse.current.x,
-        y: mouse.current.y,
-        xPercent: -50,
-        yPercent: -50
-      });
+    if (xSetDot.current && ySetDot.current) {
+      xSetDot.current(mouse.current.x);
+      ySetDot.current(mouse.current.y);
     }
 
     // The circle follows the cursor
     delayedMouse.current = {
-      x: lerp(delayedMouse.current.x, mouse.current.x, 0.25),
-      y: lerp(delayedMouse.current.y, mouse.current.y, 0.25),
+      x: lerp(delayedMouse.current.x, mouse.current.x, 0.15),
+      y: lerp(delayedMouse.current.y, mouse.current.y, 0.15),
     };
 
-    if (cursorCircle.current) {
-      gsap.to(cursorCircle.current, {
-        x: delayedMouse.current.x,
-        y: delayedMouse.current.y,
-        xPercent: -50,
-        yPercent: -50,
-        duration: 0.15,
-        ease: 'expo.out',
-        overwrite: 'position'
-      });
+    if (xSetCircle.current && ySetCircle.current) {
+      xSetCircle.current(delayedMouse.current.x);
+      ySetCircle.current(delayedMouse.current.y);
     }
 
     rafId.current = window.requestAnimationFrame(animate);
@@ -65,6 +60,19 @@ export default function CursorJellyBlob() {
 
   useEffect(() => {
     if (isTouchDevice) return;
+
+    // Initialize quickSetters
+    if (cursorDot.current) {
+      gsap.set(cursorDot.current, { xPercent: -50, yPercent: -50 });
+      xSetDot.current = gsap.quickSetter(cursorDot.current, "x", "px");
+      ySetDot.current = gsap.quickSetter(cursorDot.current, "y", "px");
+    }
+    if (cursorCircle.current) {
+      gsap.set(cursorCircle.current, { xPercent: -50, yPercent: -50 });
+      xSetCircle.current = gsap.quickSetter(cursorCircle.current, "x", "px");
+      ySetCircle.current = gsap.quickSetter(cursorCircle.current, "y", "px");
+    }
+
     const handleMouseMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY };
     };
@@ -92,3 +100,5 @@ export default function CursorJellyBlob() {
     </>
   );
 } 
+
+export default memo(CursorJellyBlob); 
